@@ -6,6 +6,7 @@ const app = express();
 const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/indexRouter');
+const usersRouter = require('./routes/usersRouter');
 
 // require("dotenv").config();
 
@@ -21,6 +22,7 @@ connection.once('open', function () {
 })
 
 app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 app.use(cors());
 app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
