@@ -7,12 +7,12 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/indexRouter');
 
-require("dotenv").config();
+// require("dotenv").config();
 
-mongoose.connect(process.env.mongoConnectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+// mongoose.connect(process.env.mongoConnectionString, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
 
 const connection = mongoose.connection;
 
