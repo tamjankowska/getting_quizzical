@@ -37,9 +37,6 @@ router.post("/search", (req, res) => {
   if (req.body.emailAddress) {
     query.emailAddress = req.body.emailAddress;
   }
-  if (req.body.password) {
-    query.password = req.body.password;
-  }
   Users.find(query, (err, results) => {
     if (err) {
       console.log(err);
@@ -89,7 +86,7 @@ router.post("/login", async (req, res) => {
       } else if (!user) {
         res.status(404).json({ status: "Not OK", err: `User doesn't exist.` });
       } else {
-        res.status(200).json({ status: `OK`, emailAddress: user.emailAddress, reviewer: user.reviewer, username: user.username });
+        res.status(200).json({ status: `OK`, emailAddress: user.emailAddress, username: user.username });
       }
     });
     return;
