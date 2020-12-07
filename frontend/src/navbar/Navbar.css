@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
+html, body {
+    margin: 0;
+}
+
+.navbar-container {
+    display: flex;
+    background-color: #FA6086;
+}
+
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 33.3%;
+    margin: 1%;
+}
+
+.logo {
+    width: 85px;
+    height: 70px;
+}
+
+.navbar-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.navbar-item {
+    margin: 2%;
+    list-style-type: none;
+    width: 45%;
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+    color: white;
+}
