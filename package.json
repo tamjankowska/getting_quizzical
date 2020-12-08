@@ -8,7 +8,8 @@
     "backend": "nodemon index.js",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run frontend\" \"npm run backend\"",
-    "bootstrap": "npm install -d && cd frontend && npm install -d"
+    "bootstrap": "npm install -d && cd frontend && npm install -d",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
