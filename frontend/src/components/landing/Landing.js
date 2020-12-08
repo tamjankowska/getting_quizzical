@@ -1,5 +1,6 @@
 import React from 'react';
-import '../landing/Landing.css';
+import './Landing.css';
+import { Link } from 'react-router-dom';
 
 function Landing() {
     return (
@@ -15,7 +16,7 @@ function Landing() {
                     <input id="password" type="password" name="password" placeholder="Password" />
                 </div>
                 <input id="submit-login" type="submit" value="Log In" />
-                <a href="/signup" className="signup-link">Create an Account</a>
+                <Link to="/signup" className="signup-link">Create an Account</Link>
             </form>
         </div>
     )

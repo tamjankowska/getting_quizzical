@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 
+input {
+    font-family: 'Jost', sans-serif;
+}
+
 .landing-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 6%;
+    margin: 3%;
+    position: relative;
 }
 
 .login-title {
@@ -37,12 +42,22 @@
 }
 
 #password {
-    margin-left: 30px;
+    margin: 0px 0px 10px 30px;
 }
 
 #submit-login {
     margin-top: 20px;
     width: 100px;
+    color: rgb(255, 255, 255); 
+    font-size: 15px; 
+    line-height: 19px; 
+    padding: 9px; 
+    border-radius: 1px; 
+    margin: 10px;
+    background-color: #FA6086; 
+    border: 3px outset #630EAC; 
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .signup-link {
