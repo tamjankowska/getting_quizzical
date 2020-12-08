@@ -22,15 +22,22 @@ connection.once('open', function () {
     console.log('MongoDB database connection established successfully!');
 })
 
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+    app.use(express.static('frontend/build'));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
+    });
+}
+
 app.use(cors());
 app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/results', resultsRouter);
+app.use('/api/', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/results', resultsRouter);
 
-app.listen(5000, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('App is online.');
 });
