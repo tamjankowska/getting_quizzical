@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require("express-session");
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
 
 const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/usersRouter');

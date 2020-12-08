@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.M-section-container{
+    background: #fa6086;
+    z-index:  2;
+    width: 35vw;
+    height: 17vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+    font-family: 'Jost', sans-serif;
+    overflow: hidden;
+    padding-left: 1%;
+    border-radius: 0.2em;
+    /*shadows*/
+        box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
+}
+#M-section-p, #M-section-h {
+    width: 50%;
+    word-wrap: none;
+    word-break: unset;
+    text-align: center;
+    margin: 0.5%;
+}
+#M-section-h {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-family: 'Righteous';
+}
+
+#M-section-p {
+    font-size: 1em;
+    font-family: 'Jost';
+}
+
+#M-section-button {
+    height: 10%;
+    margin-top: 2%;
+    padding: 0 2% 0 2%;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.055s ease-out;
+}
+
+.M-section-container:nth-child(even) {
+    background: #c4f43c;
+    color: black;
+}
+.M-section-container::after{
+    content:"";
+    z-index: 3;
+    background: url("../../images/glee.jpg");
+    background-repeat: round;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 20% 50%);
+    transition: 0.25s ease-out;
+}
+.M-section-container:hover {
+    transition: 0.2s;
+    box-shadow: 15px 15px 10px rgba(50, 205, 50, 0.2), -15px -15px 10px rgba(255, 105, 180, 0.2);
+}
+
+.M-section-container:hover::after {
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 30% 50%);
+}
+#M-section-button:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
+    transform: translate(-2px, -2px)
+}
