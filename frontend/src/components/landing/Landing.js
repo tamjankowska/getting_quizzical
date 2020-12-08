@@ -19,13 +19,13 @@ function Landing() {
     const onSubmit = (event) => {
         event.preventDefault();
         axios.post('http://localhost:5000/api/users/login', {email, password}).then((res) => {
-            if (res.data.status == 'OK') {
+            if (res.data.status === 'OK') {
                 sessionStorage.setItem('loggedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
-                history.push('/');
+                history.push('/api');
             } else {
-                history.push('/signup');
+                history.push('/api/signup');
             }
         });
     }
