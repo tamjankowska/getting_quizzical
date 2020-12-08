@@ -12,8 +12,8 @@ function Navbar() {
             </div>
 
             <ul class="navbar-text">
-                <li class="navbar-item" onMouseEnter={console.log("ENTERED")} >Home</li>
-                <li class="navbar-item">About</li>
+                <li class="navbar-item" onMouseEnter={console.log("ENTERED")} ><a href="/">Home</a></li>
+                <li class="navbar-item"><a href="/about">About</a></li>
             </ul>
         </div>
     )
