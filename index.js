@@ -7,13 +7,14 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/indexRouter');
 const usersRouter = require('./routes/usersRouter');
+const resultsRouter = require('./routes/resultsRouter');
 
-// require("dotenv").config();
+require("dotenv").config();
 
-// mongoose.connect(process.env.mongoConnectionString, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// })
+mongoose.connect(process.env.mongoConnectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 const connection = mongoose.connection;
 
@@ -21,13 +22,14 @@ connection.once('open', function () {
     console.log('MongoDB database connection established successfully!');
 })
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 app.use(cors());
 app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/results', resultsRouter);
 
 app.listen(5000, () => {
     console.log('App is online.');
