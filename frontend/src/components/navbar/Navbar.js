@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import Logo from '../images/invquizzical_logo2.svg';
-import Wink from '../images/invquizzical_logowink.svg';
+import Logo from '../../images/invquizzical_logo2.svg';
+import Wink from '../../images/invquizzical_logowink.svg';
 
 function Navbar() { 
 
