@@ -1,0 +1,51 @@
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.signup-title {
+    font-family: 'Jost', sans-serif;
+    color: white;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Jost', sans-serif;
+    background-color: #12BADE;
+    padding: 5%;
+    border-radius: 25px;
+}
+
+.username-signup-container {
+    display: flex;
+}
+
+.email-signup-container {
+    display: flex;
+}
+
+.password-signup-container {
+    display: flex;
+}
+
+#username-signup {
+    margin: 0px 0px 10px 10px;
+}
+
+#email-signup {
+    margin: 0px 0px 10px 40px;
+}
+
+#password-signup {
+    margin: 0px 0px 10px 11px;
+}
+
+#password-check {
+    margin: 0px 0px 10px 15px;
+}
