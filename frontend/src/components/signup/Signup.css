@@ -34,18 +34,18 @@
     display: flex;
 }
 
-#username-signup {
+.username-signup {
     margin: 0px 0px 10px 10px;
 }
 
-#email-signup {
+.email-signup {
     margin: 0px 0px 10px 40px;
 }
 
-#password-signup {
+.password-signup {
     margin: 0px 0px 10px 11px;
 }
 
-#password-check {
+.password-check {
     margin: 0px 0px 10px 15px;
 }
