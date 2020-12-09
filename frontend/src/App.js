@@ -7,6 +7,7 @@ import Signup from './components/signup/Signup';
 import About from './components/about/About';
 import Quiz from './components/quiz/Quiz';
 import Leaderboard from './components/Leaderboard/Leaderboard';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         <Route exact path="/quiz" component={Quiz} />
         <Route exact path="/leaderboard" component={Leaderboard} />
       </BrowserRouter>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

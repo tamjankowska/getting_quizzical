@@ -49,7 +49,7 @@ function Leaderboard() {
                                 <td className="difficulty" key={difficultyID}>{result.results.difficulty}</td>
                                 <td className="quizType" key={typeID}>{result.results.quizType}</td>
                             </tr>
-                        ))}
+                        )).reverse()}
                     </tbody>
                 </table>
             </div>
