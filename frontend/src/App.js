@@ -12,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Mainpage />
       <section className="grid"></section>
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/main" component={Mainpage} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/about" component={About} />
         <Route exact path="/quiz" component={Quiz} />
