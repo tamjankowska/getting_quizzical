@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.table-wrapper {
+    font-family: 'Jost', sans-serif;
+    color: white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}  
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.5vw;
+    width: 90vw;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #Fa6086;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th, .content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background: rgba(255,255,255,0.2);
+}
+.content-table tbody tr:nth-of-type(even):hover {
+    background: black;
+}
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+tr:hover {background-color:black;}
