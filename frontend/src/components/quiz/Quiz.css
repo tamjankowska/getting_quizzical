@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+
 .quizWrapper {
     color: white;
 
@@ -5,4 +7,21 @@
 
 h1, .category {
     color: red;
+}
+
+#startQuiz {
+    width: 20vw;
+    height: 10vh;
+    color: rgb(193, 110, 241);
+    margin: 25% 20% 25% 40%;
+    font-size: 2em;
+    font-family: 'Bungee Shade';
+    background-color: rgb(37, 26, 85);
+    box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
+}
+
+#startQuiz :hover {
+    background-color: rgba(16, 3, 73, 0.363);
+    color: white;
+
 }
