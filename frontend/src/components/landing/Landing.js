@@ -23,7 +23,7 @@ function Landing() {
                 sessionStorage.setItem('loggedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
-                history.push('/api');
+                history.push('/home/api');
             } else {
                 history.push('/api/signup');
             }
@@ -36,13 +36,13 @@ function Landing() {
             <form onSubmit={onSubmit} className="login-form">
                 <div className="email-container">
                     <label htmlFor="email">Enter your email address:</label>
-                    <input onChange = {onChange} value = {email} id="email" type="email" name="email" placeholder="Username/email" />
+                    <input onChange = {onChange} value = {email} className="email-signin" id="email" type="email" name="email" placeholder="Username/email" />
                 </div>
                 <div className="password-container">
                     <label htmlFor="password">Enter your Password:</label>
-                    <input onChange = {onChange} value = {password} id="password" type="password" name="password" placeholder="Password" />
+                    <input onChange = {onChange} value = {password} className="password-signin" id="password" type="password" name="password" placeholder="Password" />
                 </div>
-                <input id="submit-login" type="submit" value="Log in" />
+                <input className="submit-login" id="submit" type="submit" value="Log in" />
                 <Link to="/signup" className="signup-link">Create an Account</Link>
             </form>
         </div>
