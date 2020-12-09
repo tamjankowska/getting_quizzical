@@ -65,6 +65,7 @@
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 20% 50%);
     transition: 0.25s ease-out;
 }
+
 .M-section-container:hover {
     transition: 0.2s;
     box-shadow: 15px 15px 10px rgba(50, 205, 50, 0.2), -15px -15px 10px rgba(255, 105, 180, 0.2);
@@ -76,4 +77,13 @@
 #M-section-button:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
     transform: translate(-2px, -2px)
+}
+
+.M-section-container a:Link {
+    color: black;
+    filter: multiply;
+    text-decoration: none;
+}
+.M-section-container a:visited {
+    color: black;
 }
