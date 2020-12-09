@@ -14,8 +14,7 @@ class Navbar extends React.Component {
     toggleHover() {
         this.setState(prevState => ({isHovered: !prevState.isHovered}));
     }
-
-    // const [icon, setIcon] = useState(false);
+  
     render() {
         return (
                 <div class="navbar-container">
@@ -36,6 +35,19 @@ class Navbar extends React.Component {
             </div>
         )
     }
+  
+    return (
+        <div className="navbar-container">
+            <div className="logo-container">
+                <img className="logo" src={Logo} alt="Quizzical Logo" />
+            </div>
+
+            <ul className="navbar-text">
+                <li className="navbar-item"><a href="/">Home</a></li>
+                <li className="navbar-item"><a href="/about">About</a></li>
+            </ul>
+        </div>
+    )
 }
 
 export default Navbar;
