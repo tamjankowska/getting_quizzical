@@ -1,0 +1,16 @@
+.logged-out-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.logged-out-title {
+    color: white;
+    font-family: 'Jost', sans-serif;
+}
+
+.landing-component {
+    margin: -17%;
+}

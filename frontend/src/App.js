@@ -5,18 +5,20 @@ import Landing from './components/landing/Landing';
 import Mainpage from './components/mainpage/Mainpage';
 import Signup from './components/signup/Signup';
 import About from './components/about/About';
+import Logout from './components/logout/Logout';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Mainpage />
+      {/* <Mainpage /> */}
       <section className="grid"></section>
       <BrowserRouter>
         <Route exact path="/" component={Landing} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/about" component={About} />
+        <Route exact path='/logout' component={Logout} />
       </BrowserRouter>
     </div>
   );

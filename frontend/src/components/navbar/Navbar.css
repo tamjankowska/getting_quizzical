@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 
-html, body {
-    margin: 0;
-}
-
 .navbar-container {
     display: flex;
     /* background-color:#ffffff; */
     /* background-color: #FA6086; */
     background: rgb(7, 1, 34);
+    position: absolute;
+    width: 100vw;
+    height: 7vw;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    padding: 1% 0% 1% 0%;
 }
 
 
@@ -40,15 +43,37 @@ html, body {
 }
 
 .navbar-item, a:visited {
-    color: #FA6086;
+    color: #FFFFFF;
     text-decoration: none;
 }
-a:link {
+.navbar-item, a:link {
     color: #FFFFFF;
+    text-decoration: none;
 }
-a:visted:active {
-    color: #FA6086;
+.navbar-item, a:visited:active {
+    color: #FFFFFF;
+    text-decoration: none;
 }
-a:hover {
+.navbar-item, a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.logout-button-container {
+    display: flex;
+    flex-direction: column;
     color: #FA6086;
+    padding: 1%;
+    display: block;
+}
+
+.logout-icon {
+    margin: 5px 0px 0px 5px;
+}
+
+.logout-button-text {
+    color: #FA6086;
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    font-size: 18px;
 }
