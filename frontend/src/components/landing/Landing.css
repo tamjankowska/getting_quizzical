@@ -9,13 +9,14 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3%;
     position: relative;
+    min-height: 100vh;
 }
 
 .login-title {
     font-family: 'Jost', sans-serif;
     color: white;
+    text-align: center;
 }
 
 .login-form {
@@ -62,4 +63,22 @@ input {
 
 .signup-link {
     margin-top: 10px;
+    color: #FA6086;
+}
+
+.signup-link a:visited {
+    text-decoration: none; 
+    color:#FA6086; 
+}
+.signup-link a:hover {
+    text-decoration: none; 
+    color:#FA6086; 
+}
+.signup-link a:focus {
+    text-decoration: none; 
+    color:#FA6086; 
+}
+.signup-link a:hover, a:active {
+    text-decoration: none; 
+    color:#FA6086;
 }
