@@ -63,7 +63,7 @@
     color: #fa6086;
 }
 
-tr:hover {
+.content-table tbody tr:hover {
     transition: 0.2s ease-out;
     background-color: #c4f43c;
     color: #fa6086;
