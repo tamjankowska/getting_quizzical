@@ -14,7 +14,11 @@ function Leaderboard() {
 
     const getResults = async () => {
         await axios.post('http://localhost:5000/api/users/leaderboard').then((res) => {
-            setResults(res.data.results);
+            // setResults(res.data.results);
+            setResults(res.data.results.flatMap((user) => {return user.results.map((result) => {
+                result.username = user.username
+                return result
+            })}));
         });
     };
 
@@ -44,12 +48,12 @@ function Leaderboard() {
                         {Results.map((result) => (
                             <tr className="quizItems">
                                 <td className="user" key={userID}>{result.username}</td>
-                                <td className="Points" key={pointsID}>{result.results.points}</td>
-                                <td className="quizcategory" key={categoryID}>{result.results.category}</td>
-                                <td className="difficulty" key={difficultyID}>{result.results.difficulty}</td>
-                                <td className="quizType" key={typeID}>{result.results.quizType}</td>
+                                <td className="Points" key={pointsID}>{result.points}</td>
+                                <td className="quizcategory" key={categoryID}>{result.category}</td>
+                                <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
+                                <td className="quizType" key={typeID}>{result.quizType}</td>
                             </tr>
-                        )).reverse()}
+                        )).sort()}
                     </tbody>
                 </table>
             </div>
