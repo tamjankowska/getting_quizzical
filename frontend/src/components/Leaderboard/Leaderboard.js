@@ -16,7 +16,7 @@ function Leaderboard() {
     const [type, setType] = useState('');
 
     const getResults = async () => {
-        await axios.post('http://localhost:5000/api/users/leaderboard').then((res) => {
+        await axios.post('api/users/leaderboard').then((res) => {
             // setResults(res.data.results);
             setResults(res.data.results.flatMap((user) => {return user.results.map((result) => {
                 result.username = user.username;
