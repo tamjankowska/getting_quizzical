@@ -23,9 +23,9 @@ function Landing() {
                 sessionStorage.setItem('loggedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
-                history.push('/home/api');
+                history.push('/main');
             } else {
-                history.push('/api/signup');
+                history.push('/signup');
             }
         });
     }
