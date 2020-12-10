@@ -15,7 +15,7 @@
     width: 20vw;
     height: 10vh;
     color: rgb(218, 199, 206);
-    margin: 10% 10% 25% 40%;
+    margin: 20% 10% 25% 40%;
     font-size: 2em;
     font-family: 'Bungee Shade';
     background: linear-gradient(90deg, rgba(131, 58, 180, 0.712) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(69, 249, 252, 0.76) 100%);
@@ -31,26 +31,23 @@
 }
 
 .quizItems {
-    width: 60vw;
+    font-family: 'Bungee Shade', cursive;
+    width: 50vw;
     display: flex;
-    margin-left: 21%;
-    margin-top: 5%;
-    padding: 5%;
+    margin-left: 22.2%;
+    margin-top: 15%;
+    padding: 2.5%;
     flex-direction: column;
     background: linear-gradient(-45deg, rgba(131, 58, 180, 0.712), rgba(252, 43, 120, 0.774), rgba(69, 249, 252, 0.76));
     background-size: 400%;
-    border: 1em solid;
+    border: 0.5em solid;
     border-image-source: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
     border-image-slice: 1;
     border-style: groove;
-    transition: border-width 0.2s linear;
     animation: gradient 10s ease;
     animation-iteration-count: infinite;
 }
 
-.quizItems:hover {
-    border-width: 1.3em;
-}
 @keyframes gradient {
 	0% {
         background-position: 0% 50%;
@@ -63,60 +60,23 @@
 	}
 }
 
-​
-h1 {
-    font-family: 'Bungee Shade';
-    color: white;   
-}
-
-.category, .difficulty {
+.category-difficulty {
     font-family: 'Jost', sans-serif;
     font-size: 0.9em;
     text-transform: capitalize;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .radio__label {
-    line-height: 1;
-    display: grid;
-    grid-template-columns: min-content auto;
-    grid-gap: .5em;
-    margin: 0;
-    flex-direction: column;
-    font-family: 'Cutive Mono', monospace;
-    color: white;
-    transition: 180ms all ease-in-out;
-    opacity: 0.8;
+    font-family: 'Righteous', sans-serif;
+    margin: 0 0 2% 2%;
 }
 
-.radio__input input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
 
-.radio__input input:checked + .radio__control {
-    background: radial-gradient(currentcolor 50%, rgba(255, 0, 0, 0) 51%);
+.radio__input, .radio__answer {
+    padding: 2%;
 }
-
-.radio__input input:focus + .radio__control {
-    box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em currentColor;
-}
-.radio__input {
-    display: flex;
-}
-
-.radio__control {
-    display: block;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    border: 0.1em solid currentColor;
-    transform: translateY(-0.5em);
-}
-
-.radio:focus-within .radio__label {
-    transform: scale(1.05);
-    opacity: 1;
-}
-
 

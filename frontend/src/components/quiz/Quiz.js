@@ -46,6 +46,12 @@ function Quiz() {
     })
   };
 
+  const replaceEntities = (html) => {
+        let data = questions;
+        questions.innerHTML = html;
+        return questions.value;
+  }
+
 
   return (
     <div className="quizWrapper">
@@ -62,24 +68,19 @@ function Quiz() {
                   {question.question}
                 </h1>
 
-                <h2 className="category" key={categoryID}>
-                  {question.category}
+                <h2 className="category-difficulty" key={categoryID}>
+                  {question.category} | {question.difficulty}
                 </h2>
 
-                <h3 className="difficulty" key={difficultyID}>
-                  Difficulty: {question.difficulty}
-                </h3>
-                
                 <div className="allAnswers" key={answersID}>
                   {shuffle([
                     question.correct_answer,
                     ...question.incorrect_answers,
                   ]).map((answer) => (
-                    <React.Fragment>
-                        <label className = "radio__label" htmlFor = {answersID}>{answer}</label>  
-                        <span className = "radio__input"><input key = {answersID} type = "radio" name = "answer" className="answer"></input></span>
-                        <span className = "radio__control"></span>
-                    </React.Fragment>
+                    <div className = "radio__input"> 
+                        <input key = {answersID} type = "radio" name = "answer" id = {answersID} className="radio__answer"></input>
+                        <label className = "radio__label" htmlFor = "radio1">{answer}<br /></label>  
+                    </div>
                   ))}
                 </div>
               </div>

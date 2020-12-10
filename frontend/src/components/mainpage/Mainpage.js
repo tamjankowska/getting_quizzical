@@ -22,7 +22,7 @@ function Mainpage() {
                 <Section heading="Play a Round"
                     photo={su}
                     text="Test your knowledge - start a new quiz"
-                    link="/newQuiz"
+                    link="/quiz"
                     button="Start New Quiz" />
                 <Section heading="Random Quiz"
                     photo={su}
