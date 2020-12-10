@@ -1,7 +1,7 @@
 import React from 'react';
 import Landing from '../landing/Landing'
 import '../mainpage/Mainpage.css';
-import  './Logout.css';
+import './Logout.css';
 
 const Logout = () => {
     sessionStorage.removeItem('loggedIn');
