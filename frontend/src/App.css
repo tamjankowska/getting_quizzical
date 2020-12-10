@@ -10,6 +10,9 @@ html, body {
 body {
     margin: 0;
 }
+.Appcontent {
+    margin-top: 10vw;
+}
 
 body { 
     width: 100%; 
