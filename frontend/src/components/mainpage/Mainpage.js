@@ -6,7 +6,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 function Mainpage() {
     return (
-        <BrowserRouter>
+        <>
+            <IdleTimer />
+            <BrowserRouter>
             <div className="mainpage-container">
                 <Section heading="You're Doing Great, Sweetie!"
                     // url="`${su}`"
@@ -31,6 +33,7 @@ function Mainpage() {
                     button="Let's Get Into Quizzical" />
             </div>
         </BrowserRouter>
+        </>
     )
 }
 
