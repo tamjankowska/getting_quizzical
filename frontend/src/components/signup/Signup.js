@@ -12,7 +12,7 @@ function Signup() {
 
     const getResponse = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/api/users/signup', {
+        axios.post('api/users/signup', {
             username: username,
             emailAddress: email,
             password: password,
