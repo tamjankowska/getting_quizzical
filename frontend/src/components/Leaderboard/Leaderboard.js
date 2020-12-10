@@ -104,7 +104,7 @@ function Leaderboard() {
                             } else if (!type && !difficulty && !searchCategory) {return result}
 
                         }).map((result) => (
-                            <tr className="quizItems">
+                            <tr className="tableItems">
                                 <td className="user" key={userID}>{result.username}</td>
                                 <td className="Points" key={pointsID}>{result.points}</td>
                                 <td className="quizcategory" key={categoryID}>{result.category}</td>
