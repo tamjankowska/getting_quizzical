@@ -24,7 +24,9 @@
 
 .logo {
     width: 20vw;
+    height: 7vw;
 }
+
 
 .navbar-text {
     display: flex;
