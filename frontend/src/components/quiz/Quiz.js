@@ -67,21 +67,21 @@ function Quiz() {
                 </h2>
 
                 <h3 className="difficulty" key={difficultyID}>
-                  {question.difficulty}
+                  Difficulty: {question.difficulty}
                 </h3>
-
-                <h4 className="quizType" key={typeID}>
-                  {question.type}
-                </h4>
-
-                <h5 className="allAnswers" key={answersID}>
+                
+                <div className="allAnswers" key={answersID}>
                   {shuffle([
                     question.correct_answer,
                     ...question.incorrect_answers,
                   ]).map((answer) => (
-                    <p className="answer">{answer}</p>
+                    <React.Fragment>
+                        <label className = "radio__label" htmlFor = {answersID}>{answer}</label>  
+                        <span className = "radio__input"><input key = {answersID} type = "radio" name = "answer" className="answer"></input></span>
+                        <span className = "radio__control"></span>
+                    </React.Fragment>
                   ))}
-                </h5>
+                </div>
               </div>
             ))}
           </div>
