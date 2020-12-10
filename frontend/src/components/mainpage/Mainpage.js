@@ -3,6 +3,7 @@ import './Mainpage.css';
 import Section from './MainpageSection'
 import su from '../../images/glee.jpg'
 import { BrowserRouter } from 'react-router-dom';
+import IdleTimer from '../logoutpopup/LogoutPopup';
 
 function Mainpage() {
     return (
