@@ -41,11 +41,14 @@ function App() {
                 <Route exact path="/about" component={About} />
                 <Route exact path="/quiz" component={Quiz} />
                 <Route exact path="/leaderboard" component={Leaderboard} />
+                <Route exact path="/UserHistory" component={UserHistory} />
               </Switch>
             </body>
-            <footer>
-              <Footer />
-            </footer>
+            <div className="app-footer">
+              <footer>
+                <Footer />
+              </footer>
+            </div>
           </BrowserRouter>
     </div>
   );
