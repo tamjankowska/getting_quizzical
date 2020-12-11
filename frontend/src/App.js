@@ -42,11 +42,12 @@ function App() {
                 <Route exact path="/quiz" component={Quiz} />
                 <Route exact path="/leaderboard" component={Leaderboard} />
                 <Route exact path="/UserHistory" component={UserHistory} />
-              </Switch>
-            </body>
+              </Switch>              
               <footer>
                 <Footer />
               </footer>
+            </body>
+
           </BrowserRouter>
     </div>
   );
