@@ -43,7 +43,7 @@ function App() {
                 <Route exact path="/leaderboard" component={Leaderboard} />
                 <Route exact path="/UserHistory" component={UserHistory} />
               </Switch>              
-              <footer>
+              <footer> 
                 <Footer />
               </footer>
             </body>
