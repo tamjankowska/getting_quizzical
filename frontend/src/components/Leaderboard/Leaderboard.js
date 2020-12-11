@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./Leaderboard.css";
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-require("dotenv").config();
 
 function Leaderboard() {
     const [Results, setResults] = useState([]);
