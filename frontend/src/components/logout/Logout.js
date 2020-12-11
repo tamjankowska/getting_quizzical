@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Landing from '../landing/Landing'
 import '../mainpage/Mainpage.css';
 import './Logout.css';
+import { useHistory } from 'react-router-dom';
 
 const Logout = () => {
-    sessionStorage.removeItem('loggedIn');
-    sessionStorage.removeItem('email');
-    sessionStorage.removeItem('username');
+    let history = useHistory();
+
+    sessionStorage.clear();
+
+    useEffect(() => {
+        setTimeout(() => {
+            history.push("/")
+        }, 10000);
+    })
     // add in useEffect to return, redirect to landing/login page after ~5 seconds
 
     return (

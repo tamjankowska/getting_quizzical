@@ -9,6 +9,7 @@ import Signup from './components/signup/Signup';
 import About from './components/about/About';
 import Quiz from './components/quiz/Quiz';
 import Leaderboard from './components/Leaderboard/Leaderboard';
+import UserHistory from './components/UserHistory/UserHistory';
 import Footer from './components/Footer/Footer';
 
 
@@ -29,6 +30,7 @@ function App() {
   {showNavbar ? ( <Route exact path="/about" component={Navbar} /> ) : ( <Route exact path="/about" component={NavbarLO} /> )}
                 <Route exact path="/quiz" component={Navbar} />
                 <Route exact path="/leaderboard" component={Navbar} />
+                <Route exact path="/UserHistory" component={Navbar} />
               </Switch>
             </header>
             <body className ="app-body">
