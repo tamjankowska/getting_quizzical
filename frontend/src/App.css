@@ -41,3 +41,9 @@ body {
     background-image: linear-gradient(to right, rgb(158, 255, 195) 2px, transparent 2px), linear-gradient(to bottom, rgb(255, 197, 250) 2px, transparent 2px);
     filter: blur(2px);
 }
+
+@media (max-width: 480px) {
+    footer {
+        visibility: collapse;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import './MainpageSection.css';
+import './MQmainpage.css';
 
 function MainpageSection(props) {
     return (
