@@ -20,7 +20,7 @@
 .Footer-container img {
     max-width: 10vw;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter:         drop-shadow(5px 5px 5px #222); 
+    filter: drop-shadow(5px 5px 5px #222); 
 }
 .boring-footer {
     padding-top: 1.5vw;
