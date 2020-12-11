@@ -1,0 +1,20 @@
+@media (max-width: 480px) {   
+  #M-section-button {
+    font-size: 6px;
+  }
+  .M-section-container {
+    width: 80vw;
+    height: 35vw;
+    margin: 10px 0px 10px 0px;
+  }
+  #M-section-h {
+    font-size: 4vw;
+  }
+
+  #M-section-p {
+      font-size: 2.7vw;
+  }
+  #M-section-button {
+    font-size: 2.5vw;
+  }
+}

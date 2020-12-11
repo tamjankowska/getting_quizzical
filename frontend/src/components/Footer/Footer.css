@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    margin-top: 16vw;
+    /* margin-top: 16vw; */
     padding: 10px;
     font-family: 'Jost', sans-serif;
     height: 220px;
@@ -20,7 +20,7 @@
 .Footer-container img {
     max-width: 10vw;
     -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter:         drop-shadow(5px 5px 5px #222); 
+    filter: drop-shadow(5px 5px 5px #222); 
 }
 .boring-footer {
     padding-top: 1.5vw;

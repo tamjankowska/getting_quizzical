@@ -34,6 +34,9 @@
     align-items: center;
     width: 50%;
 }
+.navbar-text a:hover, .navbar-text a:focus {
+    color: #FA6086;
+}
 
 .navbar-item {
     margin: 2%;

@@ -4,6 +4,7 @@ import Section from './MainpageSection'
 import su from '../../images/glee.jpg'
 import { BrowserRouter } from 'react-router-dom';
 import IdleTimer from '../logoutpopup/LogoutPopup';
+import './MQmainpage.css';
 
 function Mainpage() {
     return (

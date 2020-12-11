@@ -72,17 +72,17 @@
     overflow: hidden;
 }
 
-.M-section-container:hover {
+.M-section-container:hover, .M-section-container:focus {
     transition: 0.2s;
     box-shadow: 15px 15px 10px rgba(50, 205, 50, 0.2), -15px -15px 10px rgba(255, 105, 180, 0.2);
 }
 
 
-.M-section-container:hover::after {
+.M-section-container:hover::after, .M-section-container:focus::after {
     clip-path: polygon(85% 0%, 100% 50%, 85% 100%, 0% 100%, 0% 0%);
     
 }
-#M-section-button:hover {
+#M-section-button:hover, #M-section-button:focus {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.26);
     transform: translate(-2px, -2px)
 }

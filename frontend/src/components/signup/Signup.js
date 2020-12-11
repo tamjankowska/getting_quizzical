@@ -20,11 +20,11 @@ function Signup() {
         }).then((res) => {
             console.log(res.data.result);
             if (res.data.status == 'OK') {
-                sessionStorage.setItem('loggedIn', 'true');
+                sessionStorage.setItem('loggedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
-                history.push('api/home');
+                history.push('/main');
             } else {
-                history.push('api/signup');
+                history.push('/signup');
             }
         })
     };

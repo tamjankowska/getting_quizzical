@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Leaderboard.css";
+import "./MQleaderboard.css";
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 require("dotenv").config();
