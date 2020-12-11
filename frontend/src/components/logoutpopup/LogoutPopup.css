@@ -28,7 +28,20 @@
     bottom: 0;
     background-color: rgba(99, 14, 172, 0.5);
     z-index: 1000;
+    /* opacity: 0;
+    transform: translateX(-100px);
+    transition: all 500ms ease-in-out; */
 }
+
+/* .Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+.Overlay--before-close {
+    opacity: 0;
+    transform: translateX(-100px);
+} */
 
 .modal-button {
     background-color: #C4F43C;
@@ -41,3 +54,4 @@
     display: flex;
     flex-direction: column;
 }
+
