@@ -44,11 +44,9 @@ function App() {
                 <Route exact path="/UserHistory" component={UserHistory} />
               </Switch>
             </body>
-            <div className="app-footer">
               <footer>
                 <Footer />
               </footer>
-            </div>
           </BrowserRouter>
     </div>
   );
