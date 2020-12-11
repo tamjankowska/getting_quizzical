@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./UserHistory.css";
+import "./MQuserHistory.css";
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 require("dotenv").config();

@@ -1,0 +1,17 @@
+@media (max-width: 480px) {   
+    .table-wrapper {
+        width: 90vw;
+    }
+    .content-table {
+        font-size: 3vw;
+    }
+    .content-table input, .content-table select, .content-table option {
+        font-size: 2vw;
+        width: 14vw;
+        padding: 2px;
+        font-weight: 200;
+    }
+    table {
+        table-layout: fixed;
+    }
+}
