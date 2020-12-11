@@ -12,14 +12,15 @@
 }
 
 #startQuiz {
-    width: 20vw;
-    height: 10vh;
+    width: 30vw;
+    height: 20vh;
     color: rgb(218, 199, 206);
-    margin: 20% 10% 25% 40%;
+    margin: 10% 10% 25% 35%;
     font-size: 2em;
     font-family: 'Bungee Shade';
     background: linear-gradient(90deg, rgba(131, 58, 180, 0.712) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(69, 249, 252, 0.76) 100%);
     box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
+    border-radius: 50px;
 }
 
 #startQuiz:hover {
@@ -80,3 +81,25 @@
     padding: 2%;
 }
 
+.quiz-timeLeft {
+    text-align: center;
+}
+
+.quiz-nextQuestion {
+    font-family: 'Righteous', sans-serif;
+    font-size: 2em;
+    width: 20vw;
+    margin-left: 30%;
+    background: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    border: 0.05em groove;
+    border-image-source: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    border-image-slice: 1;
+    color: white;
+    padding: 1%;
+}
+
+.quiz-nextQuestion:hover {
+    background: linear-gradient(60deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    font-size: 2.1em;
+
+}
