@@ -5,6 +5,8 @@ import Logo from '../../images/quizzical_icon.png';
 function Footer() {
 
     return (
+    <>
+        <div class="push"></div>
         <div className="Footer-container">
             <div className="footer-img">
                 <img src={Logo} alt="Quizzical Logo" value="Play" />
@@ -38,6 +40,7 @@ function Footer() {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

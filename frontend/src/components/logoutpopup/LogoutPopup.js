@@ -37,7 +37,12 @@ function LogoutPopup() {
 
     return (
         <div>
-            <Modal className="Modal" overlayClassName="Overlay" isOpen={modalIsOpen}>
+            <Modal 
+                className="Modal" 
+                overlayClassName="Overlay" 
+                isOpen={modalIsOpen}
+                // closeTimeoutMS={500}
+                >
                     <h2>You've haven't been getting very Quizzical...</h2>
                     <p>So, your session has timed out. Click below to log back in.</p>
                     <button className="modal-button" type="button" onClick={logOut}>Take me back to login</button>

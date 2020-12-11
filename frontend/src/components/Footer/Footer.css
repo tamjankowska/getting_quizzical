@@ -7,6 +7,8 @@
     margin-top: 16vw;
     padding: 10px;
     font-family: 'Jost', sans-serif;
+    height: 220px;
+    z-index: 999;
 }
 .footer-img {
     position: absolute;
