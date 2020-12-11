@@ -17,7 +17,7 @@ function LogoutPopup() {
     const onIdle = () => {
         console.log("User is idle");
         setModalIsOpen(true);
-        sessionTimeoutRef.current = setTimeout(logOut, 30000);
+        sessionTimeoutRef.current = setTimeout(logOut, 10000);
     };
 
     const stayActive = () => {
@@ -44,7 +44,7 @@ function LogoutPopup() {
             </Modal>
             <IdleTimer 
                 ref={idleTimerRef}
-                timeout={3 * 10000}
+                timeout={1 * 10000}
                 onIdle={onIdle}
             />
         </div>

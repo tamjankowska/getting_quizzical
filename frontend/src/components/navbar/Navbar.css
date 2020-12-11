@@ -61,6 +61,33 @@
     text-decoration: none;
 }
 
+.user-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: -1.5%;
+}
+
+.profile-pic {
+    width: 80px;
+    height: 85px;
+    border-radius: 50%;
+    border: 3.2px solid #FA6086;
+}
+
+.username-text {
+    font-family: 'Jost', sans-serif;
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+    color: #FA6086;
+}
+
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 4% 0% 4%;
+}
+
 .logout-button-container {
     display: flex;
     flex-direction: column;

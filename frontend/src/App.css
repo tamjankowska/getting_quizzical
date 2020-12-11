@@ -46,6 +46,14 @@ body:after {
     background-image: linear-gradient(to right, rgb(158, 255, 195) 2px, transparent 2px), linear-gradient(to bottom, rgb(255, 197, 250) 2px, transparent 2px);filter: blur(2px)
 }
 
+.app-header {
+    height: 20vh;
+}
+
+.app-body {
+    min-height: 100vh;
+}
+
 footer {
     margin-top: auto;
     align-content: flex-end;
