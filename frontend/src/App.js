@@ -21,34 +21,33 @@ function App() {
 
   return (
     <div className="App">
-          <BrowserRouter>
-            <header className="app-header">
-              <Switch>
-                <Route exact path="/" component={NavbarLO} />
-                <Route exact path="/main" component={NavbarLO} />
-                <Route exact path="/signup" component={NavbarLO} />
-  {showNavbar ? ( <Route exact path="/about" component={Navbar} /> ) : ( <Route exact path="/about" component={NavbarLO} /> )}
-                <Route exact path="/quiz" component={Navbar} />
-                <Route exact path="/leaderboard" component={Navbar} />
-                <Route exact path="/UserHistory" component={Navbar} />
-              </Switch>
-            </header>
-            <body className ="app-body">
-              <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route exact path="/main" component={Mainpage} />
-                <Route exact path="/signup" component={Signup} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/quiz" component={Quiz} />
-                <Route exact path="/leaderboard" component={Leaderboard} />
-                <Route exact path="/UserHistory" component={UserHistory} />
-              </Switch>              
-              <footer> 
-                <Footer />
-              </footer>
-            </body>
-
-          </BrowserRouter>
+      <BrowserRouter>
+        <header className="app-header">
+          <Switch>
+            <Route exact path="/" component={NavbarLO} />
+            <Route exact path="/main" component={NavbarLO} />
+            <Route exact path="/signup" component={NavbarLO} />
+            {showNavbar ? (<Route exact path="/about" component={Navbar} />) : (<Route exact path="/about" component={NavbarLO} />)}
+            <Route exact path="/quiz" component={Navbar} />
+            <Route exact path="/leaderboard" component={Navbar} />
+            <Route exact path="/UserHistory" component={Navbar} />
+          </Switch>
+        </header>
+        <div className="app-body">
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/main" component={Mainpage} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/quiz" component={Quiz} />
+            <Route exact path="/leaderboard" component={Leaderboard} />
+            <Route exact path="/UserHistory" component={UserHistory} />
+          </Switch>
+        </div>
+        <footer className="app-footer">
+          <Footer />
+        </footer>
+      </BrowserRouter>
     </div>
   );
 }

@@ -49,7 +49,7 @@ function LogoutPopup() {
             </Modal>
             <IdleTimer 
                 ref={idleTimerRef}
-                timeout={1 * 10000}
+                timeout={1 * 100000}
                 onIdle={onIdle}
             />
         </div>
