@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.table-wrapper {
+    font-family: 'Jost', sans-serif;
+    color: white;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}  
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.5vw;
+    width: 90vw;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    background: #202e84;
+    box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
+}
+
+.content-table thead tr {
+    background-color: #Fa6086;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    height: 5vw;
+}
+
+.content-table th, .content-table td {
+    padding: 12px 15px;
+}
+.content-table input, .content-table select, .content-table option {
+    height: 10%;
+    padding: 1% 2% 1% 2%;
+    border-radius: 1em;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: none;
+    color: #202e84;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.8vw;
+}
+.content-table select {
+    cursor: pointer;
+}
+.content-table input:focus, .content-table select:focus {
+    box-shadow: inset 0 0 5px 2px rgba(255, 255, 255, 0.5);
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background: rgba(255,255,255,0.2);
+}
+.content-table tbody tr:nth-of-type(even):hover {
+    background: #c4f43c;
+    color: #fa6086;
+}
+
+.content-table tbody tr:hover {
+    transition: 0.2s ease-out;
+    background-color: #c4f43c;
+    color: #fa6086;
+}

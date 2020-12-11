@@ -61,7 +61,7 @@ router.get('/user/:id', (req, res) => {
             res.status(404).json({status: 'Not OK', msg: 'Not found'});
         } else {
             const user = await Users.findOne({_id: req.params.id}).exec();
-            res.status(200).json({status: 'OK', results, username: user.username})
+            res.status(200).json({status: 'OK', results, username: user.username, userID: user._id})
         }
     });
 });
