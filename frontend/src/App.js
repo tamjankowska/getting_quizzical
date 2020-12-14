@@ -11,11 +11,11 @@ import Quiz from './components/quiz/Quiz';
 import Leaderboard from './components/Leaderboard/Leaderboard';
 import UserHistory from './components/UserHistory/UserHistory';
 import Footer from './components/Footer/Footer';
+import Logout from './components/logout/Logout';
+import LoggedInStatus from './components/loggedinstatus/LoggedInStatus';
 
 
 function App() {
-
-  const [showNavbar] = useState(false);
 
 
 
@@ -23,15 +23,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <header className="app-header">
-          <Switch>
-            <Route exact path="/" component={NavbarLO} />
-            <Route exact path="/main" component={NavbarLO} />
-            <Route exact path="/signup" component={NavbarLO} />
-            {showNavbar ? (<Route exact path="/about" component={Navbar} />) : (<Route exact path="/about" component={NavbarLO} />)}
-            <Route exact path="/quiz" component={Navbar} />
-            <Route exact path="/leaderboard" component={Navbar} />
-            <Route exact path="/UserHistory" component={Navbar} />
-          </Switch>
+          <LoggedInStatus />
         </header>
         <div className="app-body">
           <Switch>
@@ -42,6 +34,7 @@ function App() {
             <Route exact path="/quiz" component={Quiz} />
             <Route exact path="/leaderboard" component={Leaderboard} />
             <Route exact path="/UserHistory" component={UserHistory} />
+            <Route exact path="/logout" component={Logout} />
           </Switch>
         </div>
         <footer className="app-footer">

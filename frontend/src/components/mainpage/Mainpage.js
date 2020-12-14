@@ -5,12 +5,14 @@ import su from '../../images/glee.jpg'
 import { BrowserRouter } from 'react-router-dom';
 import IdleTimer from '../logoutpopup/LogoutPopup';
 import './MQmainpage.css';
+import Logout from '../logout/Logout';
 
 function Mainpage() {
     return (
         <>
             <IdleTimer />
             <BrowserRouter>
+            {(sessionStorage.getItem("loggedIn")) ? 
             <div className="mainpage-container">
                 <Section heading="You're Doing Great, Sweetie!"
                     // url="`${su}`"
@@ -34,6 +36,7 @@ function Mainpage() {
                     link="/randomQuiz"
                     button="Let's Get Into Quizzical" />
             </div>
+            : <Logout />}
         </BrowserRouter>
         </>
     )

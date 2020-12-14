@@ -6,7 +6,7 @@ function Footer() {
 
     return (
     <>
-        <div class="push"></div>
+        <div className="push"></div>
         <div className="Footer-container">
             <div className="footer-img">
                 <img src={Logo} alt="Quizzical Logo" value="Play" />
