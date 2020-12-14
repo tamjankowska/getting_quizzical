@@ -11,6 +11,7 @@ import Quiz from './components/quiz/Quiz';
 import Leaderboard from './components/Leaderboard/Leaderboard';
 import UserHistory from './components/UserHistory/UserHistory';
 import Footer from './components/Footer/Footer';
+import Faq from './components/Faq/Faq';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/quiz" component={Navbar} />
             <Route exact path="/leaderboard" component={Navbar} />
             <Route exact path="/UserHistory" component={Navbar} />
+            <Route exact path="/faq" component={NavbarLO} />
           </Switch>
         </header>
         <div className="app-body">
@@ -41,7 +43,8 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/quiz" component={Quiz} />
             <Route exact path="/leaderboard" component={Leaderboard} />
-            <Route exact path="/UserHistory" component={UserHistory} />
+            <Route exact path="/userhistory" component={UserHistory} />
+            <Route exact path="/faq" component={Faq} />
           </Switch>
         </div>
         <footer className="app-footer">
