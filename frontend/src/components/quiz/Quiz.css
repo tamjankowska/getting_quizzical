@@ -11,7 +11,7 @@
     color: white;
 }
 
-#startQuiz {
+.startQuiz {
     width: 30vw;
     height: 20vh;
     color: rgb(218, 199, 206);
@@ -23,7 +23,7 @@
     border-radius: 50px;
 }
 
-#startQuiz:hover {
+.startQuiz:hover {
     color: white;
     transition: box-shadow 0.2s;
     transition: background-color 3s ease-out;

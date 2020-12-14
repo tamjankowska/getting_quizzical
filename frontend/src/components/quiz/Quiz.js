@@ -2,27 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Quiz.css";
 import axios from "axios";
 import { nanoid } from "nanoid";
+import GetQuestions from './getQuestions';
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
-
-  const [questionID] = useState(nanoid);
-  const [categoryID] = useState(nanoid);
-  const [answersID] = useState(nanoid);
-
-  const getQuestions = async () => {
-    let url = `https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`;
-    await axios.get(url).then((res) => {
-      setQuestions(res.data.results);
-    });
-  };
-
-  useEffect(() => {
-    if (questions.length == 0) {
-      getQuestions();
-    }
-  });
 
   const startQuiz = (event) => {
     event.preventDefault();
@@ -32,11 +16,7 @@ function Quiz() {
 
   const [index, setIndex] = useState(1);
 
-  const shuffle = (array) => {
-    let shuffledArray = array.sort(() => Math.random() - 0.5);
-    return shuffledArray; // need to add in if statement so that it only shuffles once when timeLeft === 30
-    // currently shuffles on every rerender
-  };
+
 
   const [timeLeft, setTimeLeft] = useState(30);
   const [points, setPoints] = useState(0);
@@ -78,57 +58,18 @@ function Quiz() {
     if (index === 11) {
       setIndex(index + 1);
       alert("How quizzical did you get?! Your total score is: " + points);
-      return;
+      setQuizStarted(false);
+
+      return (
+        <button className="startQuiz" value="startQuiz" onClick={startQuiz}>
+        Play again!
+      </button>
+      )
     }
 
     return (
-      <div className="quizBeingPlayed">
-        {questions.slice(index - 1, index).map((question) => (
-          <div className="quizItems">
-            <h1 className="question" key={questionID}>
-              {question.question}
-            </h1>
-
-            <h2 className="category-difficulty" key={categoryID}>
-              {question.category} | {question.difficulty}
-            </h2>
-
-            <div className="allAnswers" key={answersID}>
-              {([
-                // shuffle has been removed from here, needs to be added back in when fixed
-                question.correct_answer,
-                ...question.incorrect_answers,
-              ]).map((answer) => (
-                <div className="radio__input">
-                  <input
-                    onClick={() => {
-                      if (answer === question.correct_answer) {
-                        questionCorrect();
-                        alert("Correct! Total points: " + (points + 10));
-                      } else if (answer !== question.correct_answer) {
-                        questionIncorrect();
-                        alert(
-                          "Incorrect. Total points: " +
-                            points +
-                            ". The correct answer was: " +
-                            question.correct_answer
-                        );
-                      }
-                    }}
-                    key={answersID}
-                    type="radio"
-                    name="answer"
-                    defaultChecked={false}
-                    id={answersID}
-                    className="radio__answer"
-                  ></input>
-                  <label className="radio__label" htmlFor="radio1">
-                    {answer}
-                    <br />
-                  </label>
-                </div>
-              ))}
-            </div>
+      <div>
+        <GetQuestions />
             <h1 className="quiz-timeLeft">{timeLeft}</h1>
             <button
               className="quiz-nextQuestion"
@@ -139,11 +80,11 @@ function Quiz() {
             >
               Next Question!
             </button>
-          </div>
-        ))}
+          
       </div>
-    );
-  };
+    )
+  }
+
   const replaceEntities = (html) => {
     let data = questions;
     questions.innerHTML = html;
@@ -153,7 +94,7 @@ function Quiz() {
   return (
     <div className="quizWrapper">
       <div className="quizData">
-        <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
+        <button className="startQuiz" value="startQuiz" onClick={startQuiz}>
           Ready? Let's get quizzical!
         </button>
         {quizStarted ? playGame() : ""}
