@@ -33,3 +33,9 @@
     padding: 0;
     text-align: center;
 }
+.Footer-container a {
+    color: black;
+}
+.Footer-container a:hover, .Footer-container a:focus {
+    color: #Fa6086;
+}

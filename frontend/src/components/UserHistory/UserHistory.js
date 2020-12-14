@@ -36,32 +36,31 @@ function UserHistory() {
     })
 
     return (
-                <div className="table-wrapper">
-                    <table className="content-table">
-                        <thead>
-                            <tr>
-                                <th>Score</th>
-                                <th>Category<br/>
-                                    <input type="text" placeholder="Search Category..." onChange={event => {setSearchCategory(event.target.value)}}/>
-                                </th>
-                                <th>Difficulty<br/>
-                                    <select name='difficulty' onChange={event => {setDifficulty(event.target.value)}}>
-                                        <option value="" selected>All</option>
-                                        <option value='Easy'>Easy</option>
-                                        <option value='Moderate'>Moderate</option>
-                                        <option value='Hard'>Hard</option>
-                                    </select>
-                                </th>
-                                <th>Quiz Type<br/>
-                                    <select name='type' onChange={event => {setType(event.target.value)}}>
-                                        <option value="" selected>All</option>
-                                        <option value='True/False'>True/False</option>
-                                        <option value='Multiple Choice'>Multiple Choice</option>
-                                    </select>
-                                </th>
-                            </tr>
-                        </thead>
-
+            <div className="table-wrapper">
+                <table className="content-table">
+                    <thead>
+                        <tr>
+                            <th>Score</th>
+                            <th>Category<br/>
+                                <input type="text" placeholder="Search Category..." onChange={event => {setSearchCategory(event.target.value)}}></input>
+                            </th>
+                            <th>Difficulty<br/>
+                                <select name='difficulty' onChange={event => {setDifficulty(event.target.value)}}>
+                                    <option value="" selected>All</option>
+                                    <option value='Easy'>Easy</option>
+                                    <option value='Moderate'>Moderate</option>
+                                    <option value='Hard'>Hard</option>
+                                </select>
+                            </th>
+                            <th>Quiz Type<br/>
+                                <select name='type' onChange={event => {setType(event.target.value)}}>
+                                    <option value="" selected>All</option>
+                                    <option value='True/False'>True/False</option>
+                                    <option value='Multiple Choice'>Multiple Choice</option>
+                                </select>
+                            </th>
+                        </tr>
+                    </thead>
                     <tbody>
                         {Results.filter((result) => {
                             if ((result.quizType.toLowerCase().includes(type.toLowerCase()))

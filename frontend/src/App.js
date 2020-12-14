@@ -13,6 +13,7 @@ import UserHistory from './components/UserHistory/UserHistory';
 import Footer from './components/Footer/Footer';
 import Logout from './components/logout/Logout';
 import LoggedInStatus from './components/loggedinstatus/LoggedInStatus';
+import Faq from './components/Faq/Faq';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/leaderboard" component={Leaderboard} />
             <Route exact path="/UserHistory" component={UserHistory} />
             <Route exact path="/logout" component={Logout} />
+            <Route exact path="/faq" component={Faq} />
           </Switch>
         </div>
         <footer className="app-footer">

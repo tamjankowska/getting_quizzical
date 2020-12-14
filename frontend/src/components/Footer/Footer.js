@@ -15,27 +15,27 @@ function Footer() {
                 <div className="footer-column1">
                     <h3>About</h3>
                     <ul>
-                        <li>About Quizzical</li>
+                        <li><a href="/about">About Quizzical</a></li>
                         <li>Katie</li>
                         <li>Tam</li>
                         <li>Emily</li>
-                        <li>Code Nation</li>
+                        <li><a href="https://wearecodenation.com/" target="_blank">Code Nation</a></li>
                     </ul>
                 </div>
                 <div className="footer-column2">
                     <h3>Resources</h3>
                     <ul>
-                        <li>FAQ</li>
+                        <li><a href="/faq">FAQ</a></li>
                         <li>Contact</li>
                     </ul>
                 </div>
                 <div className="footer-column3">
                     <h3>Navigation</h3>
                     <ul>
-                        <li>Home</li>
-                        <li>Leaderboard</li>
-                        <li>User History</li>
-                        <li>User Login</li>
+                        <li><a href="/main">Home</a></li>
+                        <li><a href="/leaderboard">Leaderboard</a></li>
+                        <li><a href="/userhistory">User History</a></li>
+                        <li><a href="/">User Login</a></li>
                     </ul>
                 </div>
             </div>
