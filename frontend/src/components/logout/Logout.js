@@ -7,9 +7,8 @@ import { useHistory } from 'react-router-dom';
 const Logout = () => {
     let history = useHistory();
 
-    sessionStorage.clear();
-
     useEffect(() => {
+        sessionStorage.clear();
         setTimeout(() => {
             history.push("/")
         }, 10000);
@@ -19,7 +18,7 @@ const Logout = () => {
     return (
         <>
             <div className="logged-out-container">
-                <h1 className="logged-out-title">You are now logged out. Sign in below to play again!</h1>
+                <h1 className="logged-out-title">You are logged out. Sign in below to play!</h1>
             </div>
             <div className="landing-component">
                 <Landing />

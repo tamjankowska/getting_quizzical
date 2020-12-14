@@ -11,12 +11,12 @@ import Quiz from './components/quiz/Quiz';
 import Leaderboard from './components/Leaderboard/Leaderboard';
 import UserHistory from './components/UserHistory/UserHistory';
 import Footer from './components/Footer/Footer';
+import Logout from './components/logout/Logout';
+import LoggedInStatus from './components/loggedinstatus/LoggedInStatus';
 import Faq from './components/Faq/Faq';
 
 
 function App() {
-
-  const [showNavbar] = useState(false);
 
 
 
@@ -24,16 +24,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <header className="app-header">
-          <Switch>
-            <Route exact path="/" component={NavbarLO} />
-            <Route exact path="/main" component={NavbarLO} />
-            <Route exact path="/signup" component={NavbarLO} />
-            {showNavbar ? (<Route exact path="/about" component={Navbar} />) : (<Route exact path="/about" component={NavbarLO} />)}
-            <Route exact path="/quiz" component={Navbar} />
-            <Route exact path="/leaderboard" component={Navbar} />
-            <Route exact path="/UserHistory" component={Navbar} />
-            <Route exact path="/faq" component={NavbarLO} />
-          </Switch>
+          <LoggedInStatus />
         </header>
         <div className="app-body">
           <Switch>
@@ -43,7 +34,8 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/quiz" component={Quiz} />
             <Route exact path="/leaderboard" component={Leaderboard} />
-            <Route exact path="/userhistory" component={UserHistory} />
+            <Route exact path="/UserHistory" component={UserHistory} />
+            <Route exact path="/logout" component={Logout} />
             <Route exact path="/faq" component={Faq} />
           </Switch>
         </div>

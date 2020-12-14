@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Leaderboard.css";
 import "./MQleaderboard.css";
+import Logout from '../logout/Logout';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 require("dotenv").config();
@@ -37,43 +38,44 @@ function Leaderboard() {
     return (
 
             <div className="table-wrapper">
-                <table className="content-table">
-                    <thead>
-                        <tr>
-                            <th>User</th>
-                            <th>Score</th>
-                            <th>Category<br/>
-                                <input type="text" placeholder="Search Category..." onChange={event => {setSearchCategory(event.target.value)}}></input>
-                            </th>
-                            <th>Difficulty<br/>
-                                <select name='difficulty' onChange={event => {setDifficulty(event.target.value)}}>
-                                    <option value="" selected>All</option>
-                                    <option value='Easy'>Easy</option>
-                                    <option value='Moderate'>Moderate</option>
-                                    <option value='Hard'>Hard</option>
-                                </select>
-                            </th>
-                            <th>Quiz Type<br/>
-                                <select name='type' onChange={event => {setType(event.target.value)}}>
-                                    <option value="" selected>All</option>
-                                    <option value='True/False'>True/False</option>
-                                    <option value='Multiple Choice'>Multiple Choice</option>
-                                </select>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                {(sessionStorage.getItem("loggedIn")) ? 
+                    <table className="content-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Score</th>
+                                <th>Category<br/>
+                                    <input type="text" placeholder="Search Category..." onChange={event => {setSearchCategory(event.target.value)}}></input>
+                                </th>
+                                <th>Difficulty<br/>
+                                    <select name='difficulty' onChange={event => {setDifficulty(event.target.value)}}>
+                                        <option value="" selected>All</option>
+                                        <option value='Easy'>Easy</option>
+                                        <option value='Moderate'>Moderate</option>
+                                        <option value='Hard'>Hard</option>
+                                    </select>
+                                </th>
+                                <th>Quiz Type<br/>
+                                    <select name='type' onChange={event => {setType(event.target.value)}}>
+                                        <option value="" selected>All</option>
+                                        <option value='True/False'>True/False</option>
+                                        <option value='Multiple Choice'>Multiple Choice</option>
+                                    </select>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-                        {Results.filter((result) => {
-                            // C D T
-                            // 0 0 0 :)
-                            // 0 0 1 :)
-                            // 0 1 0 :)
-                            // 0 1 1 :)
-                            // 1 0 0 :)
-                            // 1 0 1 :)
-                            // 1 1 0 :)
-                            // 1 1 1 :)
+                            {Results.filter((result) => {
+                                // C D T
+                                // 0 0 0 :)
+                                // 0 0 1 :)
+                                // 0 1 0 :)
+                                // 0 1 1 :)
+                                // 1 0 0 :)
+                                // 1 0 1 :)
+                                // 1 1 0 :)
+                                // 1 1 1 :)
                             if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
                                         && !difficulty
                                         && !searchCategory) {
@@ -104,17 +106,18 @@ function Leaderboard() {
                                 return result
                             } else if (!type && !difficulty && !searchCategory) {return result}
 
-                        }).map((result) => (
-                            <tr className="tableItems">
-                                <td className="user" key={userID}>{result.username}</td>
-                                <td className="Points" key={pointsID}>{result.points}</td>
-                                <td className="quizcategory" key={categoryID}>{result.category}</td>
-                                <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
-                                <td className="quizType" key={typeID}>{result.quizType}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            }).map((result) => (
+                                <tr className="tableItems">
+                                    <td className="user" key={userID}>{result.username}</td>
+                                    <td className="Points" key={pointsID}>{result.points}</td>
+                                    <td className="quizcategory" key={categoryID}>{result.category}</td>
+                                    <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
+                                    <td className="quizType" key={typeID}>{result.quizType}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                : <Logout /> }
             </div>
         
     );

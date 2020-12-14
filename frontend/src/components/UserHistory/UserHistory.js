@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./UserHistory.css";
 import "./MQuserHistory.css";
+import Logout from '../logout/Logout';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
 require("dotenv").config();
@@ -61,7 +62,6 @@ function UserHistory() {
                         </tr>
                     </thead>
                     <tbody>
-
                         {Results.filter((result) => {
                             if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
                                         && !difficulty
@@ -102,8 +102,8 @@ function UserHistory() {
                             </tr>
                         ))}
                     </tbody>
-                </table>
-            </div>
+                    </table>
+                </div>
         
     );
 }
