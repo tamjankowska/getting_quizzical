@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./UserHistory.css";
 import "./MQuserHistory.css";
-import Logout from '../logout/Logout';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-require("dotenv").config();
 
 function UserHistory() {
     const [Results, setResults] = useState([]);
@@ -20,11 +18,10 @@ function UserHistory() {
         let userID = sessionStorage.getItem('userID');
         console.log(userID);
         await axios.get(`api/results/user/${userID}`).then((res) => {
-                setResults(res.data.results)
+            setResults(res.data.results)
+        }).catch((err) => {
+            console.log(err)
         })
-            .catch((err) => {
-                console.log(err)
-            })
     };
 
     useEffect(() => {
@@ -36,75 +33,76 @@ function UserHistory() {
     })
 
     return (
-            <div className="table-wrapper">
-                <table className="content-table">
-                    <thead>
-                        <tr>
-                            <th>Score</th>
-                            <th>Category<br/>
-                                <input type="text" placeholder="Search Category..." onChange={event => {setSearchCategory(event.target.value)}}></input>
-                            </th>
-                            <th>Difficulty<br/>
-                                <select name='difficulty' onChange={event => {setDifficulty(event.target.value)}}>
-                                    <option value="" selected>All</option>
-                                    <option value='Easy'>Easy</option>
-                                    <option value='Moderate'>Moderate</option>
-                                    <option value='Hard'>Hard</option>
-                                </select>
-                            </th>
-                            <th>Quiz Type<br/>
-                                <select name='type' onChange={event => {setType(event.target.value)}}>
-                                    <option value="" selected>All</option>
-                                    <option value='True/False'>True/False</option>
-                                    <option value='Multiple Choice'>Multiple Choice</option>
-                                </select>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Results.filter((result) => {
-                            if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
-                                        && !difficulty
-                                        && !searchCategory) {
-                                return result
-                            } else if (!type
-                                        && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
-                                        && !searchCategory) {
-                                return result
-                            } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
-                                        && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
-                                        && !searchCategory) {
-                                return result
-                            } else if (!type
-                                        && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
-                                        && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
-                                return result
-                            } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
-                                        && !difficulty
-                                        && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
-                                return result    
-                            } else if (!type
-                                        && !difficulty
-                                        && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
-                                return result
-                            } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
-                                        && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
-                                        && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
-                                return result
-                            } else if (!type && !difficulty && !searchCategory) {return result}
+        <div className="table-wrapper">
+            <table className="content-table">
+                <thead>
+                    <tr>
+                        <th>Score</th>
+                        <th>Category<br />
+                            <input type="text" placeholder="Search Category..." onChange={event => { setSearchCategory(event.target.value) }}></input>
+                        </th>
+                        <th>Difficulty<br />
+                            <select name='difficulty' onChange={event => { setDifficulty(event.target.value) }}>
+                                <option value="" selected>All</option>
+                                <option value='Easy'>Easy</option>
+                                <option value='Moderate'>Moderate</option>
+                                <option value='Hard'>Hard</option>
+                            </select>
+                        </th>
+                        <th>Quiz Type<br />
+                            <select name='type' onChange={event => { setType(event.target.value) }}>
+                                <option value="" selected>All</option>
+                                <option value='True/False'>True/False</option>
+                                <option value='Multiple Choice'>Multiple Choice</option>
+                            </select>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Results.length ? <></> : <p id="no-quizztory-p">You have no quiz history! <a href="/quiz" id="play-quiz-link">Click here</a> to play your first quiz!</p>}
+                    {Results.filter((result) => {
+                        if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
+                            && !difficulty
+                            && !searchCategory) {
+                            return result
+                        } else if (!type
+                            && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
+                            && !searchCategory) {
+                            return result
+                        } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
+                            && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
+                            && !searchCategory) {
+                            return result
+                        } else if (!type
+                            && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
+                            && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
+                            return result
+                        } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
+                            && !difficulty
+                            && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
+                            return result
+                        } else if (!type
+                            && !difficulty
+                            && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
+                            return result
+                        } else if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
+                            && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
+                            && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
+                            return result
+                        } else if (!type && !difficulty && !searchCategory) { return result }
 
-                        }).map((result) => (
-                            <tr className="tableItems">
-                                <td className="Points" key={pointsID}>{result.points}</td>
-                                <td className="quizcategory" key={categoryID}>{result.category}</td>
-                                <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
-                                <td className="quizType" key={typeID}>{result.quizType}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                    </table>
-                </div>
-        
+                    }).map((result) =>  (
+                        <tr className="tableItems">
+                            <td className="Points" key={pointsID}>{result.points}</td>
+                            <td className="quizcategory" key={categoryID}>{result.category}</td>
+                            <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
+                            <td className="quizType" key={typeID}>{result.quizType}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+
     );
 }
 

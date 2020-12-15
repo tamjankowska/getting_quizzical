@@ -18,7 +18,7 @@ function Mainpage() {
                     // url="`${su}`"
                     photo={su}
                     text="See a track of all your Quizzical progress so far"
-                    link="/UserHistory"
+                    link="/userhistory"
                     button="See My History" />
                 <Section heading="See How You Rank"
                     photo={su}
