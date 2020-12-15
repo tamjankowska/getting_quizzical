@@ -16,9 +16,9 @@ function Footer() {
                     <h3>About</h3>
                     <ul>
                         <li><a href="/about">About Quizzical</a></li>
-                        <li>Katie</li>
-                        <li>Tam</li>
-                        <li>Emily</li>
+                        <li><a href="https://github.com/katiemhughes" target="_blank">Katie</a></li>
+                        <li><a href="https://github.com/tamjankowska" target="_blank">Tam</a></li>
+                        <li><a href="https://github.com/echarlotte612" target="_blank">Emily</a></li>
                         <li><a href="https://wearecodenation.com/" target="_blank">Code Nation</a></li>
                     </ul>
                 </div>

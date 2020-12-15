@@ -34,7 +34,7 @@ function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/quiz" component={Quiz} />
             <Route exact path="/leaderboard" component={Leaderboard} />
-            <Route exact path="/UserHistory" component={UserHistory} />
+            <Route exact path="/userhistory" component={UserHistory} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/faq" component={Faq} />
           </Switch>
