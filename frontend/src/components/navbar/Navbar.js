@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import Logo from "../../images/invquizzical_logo2.svg";
-// import Wink from '../../images/invquizzical_logowink.svg';
+import Wink from '../../images/invquizzical_logowink.svg';
 import { FaDoorClosed, FaDoorOpen } from "react-icons/fa";
 import Profilepic from "../../images/profilepic.png";
 import Logout from "../logout/Logout";
@@ -24,8 +24,11 @@ class Navbar extends React.Component {
       <div>
         {/* {sessionStorage.getItem("loggedIn") ? ( */}
           <div className="navbar-container">
-              <div className="logo-container">
-                <img className="logo" src={Logo} alt="Quizzical Logo" />
+              <div className="logo-container" onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+                {this.state.isHovered ? (
+                  <img className="logo" src={Wink} alt="Quizzical Logo" />)
+                  : (<img className="logo" src={Logo} alt="Quizzical Logo" />
+                )}
               </div>
 
               <ul className="navbar-text">
