@@ -30,7 +30,6 @@ class Navbar extends React.Component {
                   : (<img className="logo" src={Logo} alt="Quizzical Logo" />
                 )}
               </div>
-
               <ul className="navbar-text">
                 <li className="navbar-item">
                   <a href="/main">Home</a>

@@ -3,6 +3,15 @@ import "./UserHistory.css";
 import "./MQuserHistory.css";
 import axios from 'axios';
 import { nanoid } from 'nanoid';
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    FacebookIcon,
+    PinterestShareButton,
+    RedditShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+  } from "react-share";
 
 function UserHistory() {
     const [Results, setResults] = useState([]);
@@ -33,7 +42,11 @@ function UserHistory() {
     })
 
     return (
+        <div>
+        <h1>Share most recent quiz result</h1>
+        <FacebookShareButton url="#"> <FacebookIcon size={32} round /> </FacebookShareButton>
         <div className="table-wrapper">
+
             <table className="content-table">
                 <thead>
                     <tr>
@@ -102,7 +115,7 @@ function UserHistory() {
                 </tbody>
             </table>
         </div>
-
+    </div>
     );
 }
 
