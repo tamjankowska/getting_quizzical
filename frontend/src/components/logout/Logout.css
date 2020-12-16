@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    min-height: 20vh;
 }
 
 .logged-out-title {
@@ -13,4 +13,8 @@
 
 .landing-component {
     margin: -17%;
+}
+
+.redirect-countdown {
+    color: white;
 }

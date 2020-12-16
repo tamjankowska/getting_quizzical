@@ -1,29 +1,33 @@
-import React, { useEffect } from 'react';
-import Landing from '../landing/Landing'
+import React, { useEffect, useState } from 'react';
 import '../mainpage/Mainpage.css';
 import './Logout.css';
 import { useHistory } from 'react-router-dom';
 
 const Logout = () => {
     let history = useHistory();
+    const [countdown, setCountdown] = useState(5)
 
     useEffect(() => {
         sessionStorage.clear();
         setTimeout(() => {
             history.push("/")
-        }, 10000);
+        }, 5000);
     })
-    // add in useEffect to return, redirect to landing/login page after ~5 seconds
+    
+    useEffect(() => {
+        const redirect = setInterval(() => {
+            if (countdown <= 5 && countdown > 0) {
+                setCountdown(countdown - 1)
+            }
+        }, 1000);
+        return () => clearInterval(redirect);
+    })
 
-    return (
-        <>
-            <div className="logged-out-container">
-                <h1 className="logged-out-title">You are logged out. Sign in below to play!</h1>
-            </div>
-            <div className="landing-component">
-                <Landing />
-            </div>
-        </>
+    return ( 
+        <div className="logged-out-container">
+            <h1 className="logged-out-title">You are logged out.</h1>
+            <h2 className="redirect-countdown">Redirecting to login... {countdown}</h2>
+        </div> 
     )
 }
 
