@@ -17,7 +17,6 @@ function UserHistory() {
 
     const getResults = async () => {
         let userID = sessionStorage.getItem('userID');
-        console.log(userID);
         await axios.get(`api/results/user/${userID}`).then((res) => {
             setResults(res.data.results)
         }).catch((err) => {
