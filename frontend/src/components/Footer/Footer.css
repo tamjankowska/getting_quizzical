@@ -39,3 +39,10 @@
 .Footer-container a:hover, .Footer-container a:focus {
     color: #Fa6086;
 }
+
+.social * {
+    margin: 0.25vw;
+}
+.social-link:hover, .social-link:focus {
+    mix-blend-mode: multiply;
+}

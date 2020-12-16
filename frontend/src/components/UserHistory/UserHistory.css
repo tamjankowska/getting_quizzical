@@ -68,3 +68,15 @@
     background-color: #c4f43c;
     color: #fa6086;
 }
+
+.content-table #play-quiz-link {
+    color:  #c4f43c;
+}
+.content-table #play-quiz-link:hover, .content-table #play-quiz-link:focus {
+    color: #fa6086;
+    text-decoration: underline;
+}
+.content-table #no-quizztory-p {
+    text-align: center;
+    width: 100%;
+}
