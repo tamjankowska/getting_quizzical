@@ -4,7 +4,6 @@ import "./MQleaderboard.css";
 import Logout from '../logout/Logout';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
-require("dotenv").config();
 
 function Leaderboard() {
     const [Results, setResults] = useState([]);
