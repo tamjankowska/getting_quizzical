@@ -12,12 +12,17 @@ function Quiz() {
   const [index, setIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [points, setPoints] = useState(0);
-  const [difficulty, setDifficulty] = useState("");
-  const [type, setType] = useState("");
-  const [category, setCategory] = useState("");
   const [url, setUrl] = useState("");
+  const [resultsSent, setResultsSent] = useState(false);
+
+  let category = sessionStorage.getItem('category');
+  let difficulty = sessionStorage.getItem('difficulty');
+  let type = sessionStorage.getItem('type');
 
   const getQuestions = async () => {
+    // setResultsSent(false);
+
+    let url = (`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=${type}`);
     await axios
       .get(url)
       .then((res) => {
@@ -45,7 +50,7 @@ function Quiz() {
     if (questions.length === 0) {
       getQuestions();
     }
-  });
+  }, []);
 
   const startQuiz = (event) => {
     event.preventDefault();
@@ -112,12 +117,6 @@ function Quiz() {
     <div className="quizWrapper">
       <div className="quizData">
           <QuizSelection 
-            category = {category}
-            setCategory = {setCategory} 
-            difficulty = {difficulty} 
-            setDifficulty = {setDifficulty}
-            type = {type}
-            setType = {setType}
             url = {url}
             setUrl = {setUrl}
           />

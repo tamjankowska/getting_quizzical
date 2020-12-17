@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 
@@ -12,11 +12,12 @@ function GameOver(props) {
           username: sessionStorage.getItem('username'),
           points: props.points,
           category: sessionStorage.getItem('category'),
-          quizType: sessionStorage.getItem('quizType'),
+          quizType: sessionStorage.getItem('type'),
           difficulty: sessionStorage.getItem('difficulty'),
           quizTakenAt: sessionStorage.getItem('quizTakenAt')
         }).then((res) => {
-          if (res.data.status === 'OK') {
+          if (res.data.status == 'OK') {
+            //   props.setResultsSent(true)
             alert('Results added to user history and leaderboard! 👌 ')
           } else {
             alert('Error saving results. Sorry, please try again! 😢 ')
@@ -29,11 +30,14 @@ function GameOver(props) {
       history.go(0)
     } 
 
-    useEffect(() => {
-      if (props.quizEnded === true) {
-        saveResults();
-      }
-    })
+    // useEffect(() => {
+    //     if (props.resultsSent === true) {
+    //         sessionStorage.removeItem('difficulty');
+    //         sessionStorage.removeItem('category');
+    //         sessionStorage.removeItem('type');
+    //         sessionStorage.removeItem('quizTakenAt');
+    //     }
+    // }) 
 
     return (
         <div className = "game-over-container">

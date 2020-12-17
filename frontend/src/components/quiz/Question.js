@@ -3,9 +3,6 @@ import React from 'react';
 
 function Question(props) {
     
-    sessionStorage.setItem('category', props.question.category)
-    sessionStorage.setItem('difficulty', props.question.difficulty)
-    sessionStorage.setItem('quizType', props.question.type)
     sessionStorage.setItem('quizTakenAt', Date.now())
 
     const clickAnswer = (event) => {

@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 function QuizSelection(props) {
-    props.setUrl(`https://opentdb.com/api.php?amount=10&category=${props.category}&difficulty=${props.difficulty}&type=${props.type}`);
 
     return (
         <div className="quizSelection">
@@ -11,10 +10,10 @@ function QuizSelection(props) {
             <select
               name="difficulty"
               onChange={(event) => {
-                props.setDifficulty(event.target.value);
+                sessionStorage.setItem('difficulty', event.target.value);
               }}
             >
-              <option value="" selected>
+              <option value="">
                 {" "}
                 -{" "}
               </option>
@@ -28,11 +27,11 @@ function QuizSelection(props) {
             <br />
             <select
               name="type"
-              onChange={(event) => {
-                props.setType(event.target.value);
+              onChange={(event) => { 
+                sessionStorage.setItem('type', event.target.value);
               }}
             >
-              <option value="" selected>
+              <option value="">
                 {" "}
                 -{" "}
               </option>
@@ -46,10 +45,10 @@ function QuizSelection(props) {
             <select
               name="category"
               onChange={(event) => {
-                props.setCategory(event.target.value);
+                sessionStorage.setItem('category', event.target.value);
               }}
             >
-              <option value="" selected>
+              <option value="">
                 {" "}
                 -{" "}
               </option>
