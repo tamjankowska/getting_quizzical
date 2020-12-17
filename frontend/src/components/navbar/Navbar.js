@@ -4,7 +4,6 @@ import Logo from "../../images/invquizzical_logo2.svg";
 import Wink from '../../images/invquizzical_logowink.svg';
 import { FaDoorClosed, FaDoorOpen } from "react-icons/fa";
 import Profilepic from "../../images/profilepic.png";
-import Logout from "../logout/Logout";
 
 class Navbar extends React.Component {
   constructor() {
@@ -45,7 +44,7 @@ class Navbar extends React.Component {
               </ul>
               <a href="/profile"><div className="user-container">
                 <h2>
-                  <img src={Profilepic} className="profile-pic"></img>
+                  <img src={Profilepic} className="profile-pic" alt="profile pic"></img>
                   <p className="username-text">
                     {sessionStorage.getItem("username")}{" "}
                   </p>

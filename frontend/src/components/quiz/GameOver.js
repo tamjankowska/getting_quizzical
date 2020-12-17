@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Swal from 'sweetalert2';
@@ -7,8 +7,7 @@ function GameOver(props) {
 
     let history = useHistory();
 
-    const saveResults = async (event) => {
-        event.preventDefault();
+    const saveResults = async () => {
         await axios.post('api/results/save', {
           userID: sessionStorage.getItem('userID'),
           username: sessionStorage.getItem('username'),
@@ -38,8 +37,19 @@ function GameOver(props) {
               confirmButtonColor: '#C4F43C'
             });
           }
+        }).catch((err) => {
+          console.log(err)
         })
       }
+    const restartQuiz = (event) => {
+      history.go(0)
+    } 
+
+    useEffect(() => {
+      if (props.quizEnded === true) {
+        saveResults();
+      }
+    })
 
     return (
         <div className = "game-over-container">
@@ -82,7 +92,7 @@ function GameOver(props) {
                     <div className="neon">Game over!</div>
                 </div>
                 <div className = "restart-quiz-container">
-                    <button id="restartQuiz" value="restartQuiz" onClick={saveResults}>Play another round?</button>
+                    <button id="restartQuiz" value="restartQuiz" onClick={restartQuiz}>Play another round?</button>
                 </div>
         </div>
     )
