@@ -49,17 +49,18 @@ function DeleteAccount() {
 
     return (
         <div>
-            <div className="delete-account-container">
                 <form className="delete-account-form" onSubmit={onSubmit}>
-                    <h2>Delete your account?</h2>
                     <label htmlFor="emailAddress" name="emailAddress" id="emailAddress" value={emailAddress}>{emailAddress}</label>
-                    <label htmlFor="password">Password: </label>
-                    <input type="password" name="password" value={password} id="password" className="delete-account-input" onChange={onChange}/>
-                    <label htmlFor="passwordCheck">Verify Password: </label>
-                    <input type="password" name="passwordCheck" value={passwordCheck} className="delete-account-input" id="passwordCheck" onChange={onChange} />
-                    <input type="submit" name="submit" className="delete-account-submit"/>
+                    <div className="pword-container">
+                        <label className="delete-acc-label" htmlFor="password">Password: </label>
+                        <input type="password" name="password" value={password} id="password" className="password-input" onChange={onChange}/>
+                    </div>
+                    <div className="verify-pword-container">
+                        <label className="delete-acc-label" htmlFor="passwordCheck">Verify Password: </label>
+                        <input type="password" name="passwordCheck" value={passwordCheck} className="verify-password-input" id="passwordCheck" onChange={onChange} />
+                    </div>
+                    <input className="delete-acc-btn" type="submit" value="Submit" name="submit" />
                 </form>
-            </div>
         </div>
     )
 }

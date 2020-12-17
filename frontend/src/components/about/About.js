@@ -70,6 +70,11 @@ function About() {
                         <li><span class="fa-li"><i class="fas fa-medal"></i></span>Art</li>
                         <li><span class="fa-li"><i class="fas fa-medal"></i></span>Celebrities</li>
                         <li><span class="fa-li"><i class="fas fa-medal"></i></span>Animals</li>
+                        <li><span class="fa-li"><i class="fas fa-medal"></i></span>Vehicles</li>
+                        <li><span class="fa-li"><i class="fas fa-medal"></i></span>Comics</li>
+                        <li><span class="fa-li"><i class="fas fa-medal"></i></span>Gadgets</li>
+                        <li><span class="fa-li"><i class="fas fa-medal"></i></span>Japanese Anime and Manga</li>
+                        <li><span class="fa-li"><i class="fas fa-medal"></i></span>Cartoons and Animations</li>
                     </ul>
                     <p className="about-text">The quiz was made with ❤️ by Tam Jankowska, Emily Baldocke and Katie Hughes!</p>
                 </div>
