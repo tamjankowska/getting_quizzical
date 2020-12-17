@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 
 
 function UserHistory() {
-    const [Results, setResults] = useState([]);
+    const [results, setResults] = useState([]);
     const [pointsID] = useState(nanoid);
     const [categoryID] = useState(nanoid);
     const [difficultyID] = useState(nanoid);
@@ -17,7 +17,7 @@ function UserHistory() {
 
     const getResults = async () => {
         let userID = sessionStorage.getItem('userID');
-        await axios.get(`api/results/user/${userID}`).then((res) => {
+        await axios.post(`api/results/user/`, {id: userID}).then((res) => {
             setResults(res.data.results)
         }).catch((err) => {
             console.log(err)
@@ -25,10 +25,8 @@ function UserHistory() {
     };
 
     useEffect(() => {
-        if (Results.length === 0) {
+        if (results.length === 0) {
             getResults();
-        } else {
-            console.log(Results)
         }
     })
 
@@ -60,8 +58,8 @@ function UserHistory() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Results.length ? null : <p id="no-quizztory-p">You have no quiz history! <a href="/quiz" id="play-quiz-link">Click here</a> to play your first quiz!</p>}
-                    {Results.filter((result) => {
+                    {results.length ? "" : <p id="no-quizztory-p">You have no quiz history! <a href="/quiz" id="play-quiz-link">Click here</a> to play your first quiz!</p>}
+                    {results.filter((result) => {
                         if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
                             && !difficulty
                             && !searchCategory) {
