@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function Landing() {
-    let history = useHistory();
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -18,7 +18,9 @@ function Landing() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        axios.post('api/users/login', {email, password}).then((res) => {
+        axios.post('api/users/login', {
+            email, password
+        }).then((res) => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('loggedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);

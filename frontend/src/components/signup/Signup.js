@@ -22,6 +22,8 @@ function Signup() {
             if (res.data.status == 'OK') {
                 sessionStorage.setItem('loggedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
+                sessionStorage.setItem('username', res.data.username);
+                sessionStorage.setItem('userID', res.data.userID);
                 history.push('/main');
             } else {
                 history.push('/signup');

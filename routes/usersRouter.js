@@ -20,12 +20,12 @@ router.post("/signup", async (req, res) => {
     return res.status(400).json({ status: 'Not OK', err: 'Passwords Don\'t match' })
   }
   req.body.password = await bcrypt.hash(req.body.password, 10)
-  new Users(req.body).save((err, result) => {
+  new Users(req.body).save((err, user) => {
     if (err) {
       console.log(err);
       res.status(500).json({ status: 'Not OK', err });
     } else {
-      res.status(200).send({ status: 'OK', result });
+      res.status(200).send({ status: 'OK', emailAddress: user.emailAddress, username: user.username, userID: user._id });
     }
   });
 });
