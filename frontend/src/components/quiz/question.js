@@ -39,21 +39,16 @@ function Question(props) {
             <h2 className="category-difficulty">
               {props.question.category} | {props.question.difficulty}
             </h2>
-            <div className="allAnswers">
-                <div className="radio__input">
-                    
-                        {props.question.answers.map((answer, answerID) => (
-                            <div>
-                                <button 
-                                    key = {answerID}
-                                    onClick = {clickAnswer}
-                                    value = {answer}
-                                >{answer}
-                                </button>   
-                            </div>
-                        ))}
-                 
-                </div>
+            <div className="allAnswers">              
+                {props.question.answers.map((answer, answerID) => (
+                    <button
+                        className = "answer-button" 
+                        key = {answerID}
+                        onClick = {clickAnswer}
+                        value = {answer}
+                    > ✨ {answer} ✨
+                    </button> 
+                ))}
             </div>
         </div>
        
