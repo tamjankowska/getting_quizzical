@@ -10,21 +10,27 @@ class Navbar extends React.Component {
   constructor() {
     super();
     this.state = {
-      isHovered: false
+      isHovered: false,
+      isWinking: false,
     };
     this.toggleHover = this.toggleHover.bind(this);
+    this.toggleWink = this.toggleWink.bind(this);
   }
 
   toggleHover() {
     this.setState((prevState) => ({ isHovered: !prevState.isHovered }));
   }
+  toggleWink() {
+    this.setState((prevState) => ({ isWinking: !prevState.isWinking }));
+  }
+  
 
   render() {
     return (
       <div>
           <div className="navbar-container">
-              <div className="logo-container" onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
-                {this.state.isHovered ? (
+              <div className="logo-container" onMouseEnter={this.toggleWink} onMouseLeave={this.toggleWink}>
+                {this.state.isWinking ? (
                   <img className="logo" src={Wink} alt="Quizzical Logo" />)
                   : (<img className="logo" src={Logo} alt="Quizzical Logo" />
                 )}
