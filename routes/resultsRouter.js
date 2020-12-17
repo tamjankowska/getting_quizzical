@@ -52,15 +52,29 @@ router.post("/search", (req, res) => {
     });
 });
 
-router.get('/user/:id', (req, res) => {
-    Results.find({userID: req.params.id}, async (err, results) => {
+// router.get('/user/:id', (req, res) => {
+//     Results.find({userID: req.params.id}, async (err, results) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).json({status: 'Not OK', err});
+//         } else if (!results) {
+//             res.status(404).json({status: 'Not OK', msg: 'Not found'});
+//         } else {
+//             const user = await Users.findOne({_id: req.params.id}).exec();
+//             res.status(200).json({status: 'OK', results, username: user.username, userID: user._id})
+//         }
+//     });
+// });
+
+router.post('/user/', (req, res) => {
+    Results.find({userID: req.body.id}, async (err, results) => {
         if (err) {
             console.log(err);
             res.status(500).json({status: 'Not OK', err});
         } else if (!results) {
             res.status(404).json({status: 'Not OK', msg: 'Not found'});
         } else {
-            const user = await Users.findOne({_id: req.params.id}).exec();
+            const user = await Users.findOne({_id: req.body.id}).exec();
             res.status(200).json({status: 'OK', results, username: user.username, userID: user._id})
         }
     });
