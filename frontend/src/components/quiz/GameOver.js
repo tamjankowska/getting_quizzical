@@ -1,13 +1,30 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from "axios";
 
 function GameOver(props) {
 
     let history = useHistory();
 
-    const restartQuiz = (event) => {
-        history.go(0)
-    };
+    const saveResults = async (event) => {
+        event.preventDefault();
+        await axios.post('api/results/save', {
+          userID: sessionStorage.getItem('userID'),
+          username: sessionStorage.getItem('username'),
+          points: props.points,
+          category: sessionStorage.getItem('category'),
+          quizType: sessionStorage.getItem('quizType'),
+          difficulty: sessionStorage.getItem('difficulty'),
+          quizTakenAt: sessionStorage.getItem('quizTakenAt')
+        }).then((res) => {
+          if (res.data.status == 'OK') {
+            alert('Results added to user history and leaderboard! 👌 ')
+            history.go(0)
+          } else {
+            alert('Error saving results. Sorry, please try again! 😢 ')
+          }
+        })
+      }
 
     return (
         <div className = "game-over-container">
@@ -50,7 +67,7 @@ function GameOver(props) {
                     <div className="neon">Game over!</div>
                 </div>
                 <div className = "restart-quiz-container">
-                    <button id="restartQuiz" value="restartQuiz" onClick={restartQuiz}>Play another round?</button>
+                    <button id="restartQuiz" value="restartQuiz" onClick={saveResults}>Play another round?</button>
                 </div>
         </div>
     )
