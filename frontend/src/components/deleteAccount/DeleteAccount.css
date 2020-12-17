@@ -1,0 +1,41 @@
+.delete-account-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #12BADE;
+    padding: 5%;
+    border-radius: 25px;
+    width: 500px;
+    margin: 0px 10px 20px 0px;
+}
+
+.pword-container {
+    display: flex;
+}
+
+.verify-pword-container {
+    display: flex;
+}
+
+.password-input {
+    margin: 0px 10px 10px 10px;
+}
+
+.verify-password-input {
+    margin: 0px 52px 10px 10px;
+}
+
+.delete-acc-btn {
+    width: 100px;
+    color: rgb(255, 255, 255); 
+    font-size: 15px; 
+    line-height: 19px; 
+    padding: 9px; 
+    border-radius: 1px; 
+    margin: 10px;
+    background-color: #FA6086; 
+    border: 3px outset #630EAC; 
+    border-radius: 12px;
+    cursor: pointer;
+}
