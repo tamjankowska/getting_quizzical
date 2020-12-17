@@ -3,6 +3,7 @@ import "./Quiz.css";
 import axios from "axios";
 import Question from './Question';
 import GameOver from './GameOver';
+import Swal from 'sweetalert2';
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -64,7 +65,14 @@ function Quiz() {
 
   const playGame = () => {
     if (index === 10) {
-      alert("How quizzical did you get?! Your total score is: " + points);
+      Swal.fire({
+        title: "How quizzical did you get?! Your total score is: " + points,
+        imageUrl: 'https://i.gifer.com/685r.gif',
+        imageWidth: 400,
+        imageHeight: 300,
+        imageAlt: 'Olivia Newton John looking through legs',
+        confirmButtonColor: '#C4F43C'
+      });
       setQuizStarted(false)
       setQuizEnded(true);
       return;

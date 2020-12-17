@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function GameOver(props) {
 
@@ -16,10 +17,25 @@ function GameOver(props) {
           difficulty: sessionStorage.getItem('difficulty'),
           quizTakenAt: sessionStorage.getItem('quizTakenAt')
         }).then((res) => {
-          if (res.data.status === 'OK') {
-            alert('Results added to user history and leaderboard! 👌 ')
+          if (res.data.status == 'OK') {
+            history.go(0);
+            Swal.fire({
+              title: 'Results added to user history and leaderboard! 👌',
+              imageUrl: 'https://i.gifer.com/9xdB.gif',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Man on exercise bike with Olivia Newton John',
+              confirmButtonColor: '#C4F43C'
+            });
           } else {
-            alert('Error saving results. Sorry, please try again! 😢 ')
+            Swal.fire({
+              title: 'Error saving results. Sorry, please try again! 😢',
+              imageUrl: 'https://media0.giphy.com/media/5EftpGR63iNgY/giphy.gif',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Olivia Newton John looking surprised',
+              confirmButtonColor: '#C4F43C'
+            });
           }
         }).catch((err) => {
           console.log(err)
