@@ -12,23 +12,39 @@
 }
 
 #startQuiz {
-    width: 30vw;
-    height: 20vh;
+    width: 15vw;
+    height: 10vw;
     color: rgb(218, 199, 206);
-    margin: 10% 10% 10% 35%;
-    font-size: 2em;
+    font-size: 2vw;
     font-family: 'Bungee Shade';
-    background: linear-gradient(90deg, rgba(131, 58, 180, 0.712) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(69, 249, 252, 0.76) 100%);
-    box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
-    border-radius: 50px;
+    background: transparent;
+    border: none;
+
 }
 
 #startQuiz:hover {
     color: white;
-    transition: box-shadow 0.2s;
-    transition: background-color 3s ease-out;
-    background: linear-gradient(90deg, rgba(69, 249, 252, 0.76) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(131, 58, 180, 0.712) 100%);
-    box-shadow: 15px 15px 10px rgba(50, 205, 50, 0.2), -15px -15px 10px rgba(255, 105, 180, 0.2);
+    cursor: pointer;
+}
+
+.quizSelection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+    color: rgb(218, 199, 206);
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 0.712) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(69, 249, 252, 0.76) 100%);
+    box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
+}
+
+.quizSelection select, .quizSelection option {
+    background-color: rgba(255, 255, 255, 0.233);
+    color: black;
 }
 
 .quizItems {
