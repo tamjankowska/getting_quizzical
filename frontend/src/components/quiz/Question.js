@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import Timer from './Timer.js';
 
 function Question(props) {
     
@@ -24,14 +25,14 @@ function Question(props) {
           props.setIndex(props.index + 1);
           props.setPoints(props.points + 10)
           
-          console.log(props.index + "Correct! Total points: " + (props.points + 10));
+          alert(props.index + "Correct! Total points: " + (props.points + 10));
         }
       };
 
       const questionIncorrect = () => {
         if (props.timeLeft >= 0) {
           props.setIndex(props.index + 1);
-          console.log(`${props.index} Incorrect. The correct answer was: '${props.question.correctAnswer}'. Total points: ${props.points}`);
+          alert(`${props.index} Incorrect. The correct answer was: '${props.question.correctAnswer}'. Total points: ${props.points}`);
         }
       };
 
@@ -56,7 +57,6 @@ function Question(props) {
                 ))}
             </div>
         </div>
-       
     )
 }
 

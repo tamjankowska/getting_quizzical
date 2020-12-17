@@ -107,7 +107,7 @@ function Quiz() {
         </button>
         {quizStarted ? playGame() : ""}
         {(!quizStarted && quizEnded) ? 
-          <GameOver points = {points}
+          <GameOver points = {points} quizEnded = {quizEnded}
           /> : ""} 
       </div>
     </div>

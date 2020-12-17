@@ -10,6 +10,7 @@
     width: 100vw;
     display: flex;
     justify-content: center;
+
 }  
 .content-table {
     border-collapse: collapse;
@@ -17,7 +18,6 @@
     font-size: 1.5vw;
     width: 90vw;
     border-radius: 5px 5px 0 0;
-    overflow: hidden;
     background: #202e84;
     box-shadow: 5px 5px 5px rgba(50, 205, 50, 0.5), -5px -5px 5px rgba(255, 105, 180, 0.5);
 }
@@ -53,6 +53,7 @@
 
 .content-table tbody tr {
     border-bottom: 1px solid rgba(255,255,255,.25);
+    text-transform: capitalize;
 }
 
 .content-table tbody tr:nth-of-type(even) {

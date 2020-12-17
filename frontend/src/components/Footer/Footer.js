@@ -24,7 +24,7 @@ function Footer() {
         <div className="push"></div>
         <div className="Footer-container">
             <div className="footer-img">
-                <img src={Logo} alt="Quizzical Logo" value="Play" />
+                <a href="/quiz"><img src={Logo} alt="Quizzical Logo" value="Play"/></a>
             </div>
             <div className="boring-footer">
                 <div className="footer-column1">
@@ -62,6 +62,7 @@ function Footer() {
                         <li><a href="/leaderboard">Leaderboard</a></li>
                         <li><a href="/userhistory">User History</a></li>
                         <li><a href="/">User Login</a></li>
+                        <li><a href="/quiz">Play a Quiz</a></li>
                     </ul>
                 </div>
             </div>

@@ -44,7 +44,7 @@ function UserHistory() {
                             <select name='difficulty' onChange={event => { setDifficulty(event.target.value) }}>
                                 <option value="" selected>All</option>
                                 <option value='Easy'>Easy</option>
-                                <option value='Moderate'>Moderate</option>
+                                <option value='Medium'>Medium</option>
                                 <option value='Hard'>Hard</option>
                             </select>
                         </th>
@@ -52,7 +52,7 @@ function UserHistory() {
                             <select name='type' onChange={event => { setType(event.target.value) }}>
                                 <option value="" selected>All</option>
                                 <option value='True/False'>True/False</option>
-                                <option value='Multiple Choice'>Multiple Choice</option>
+                                <option value='Multiple'>Multiple</option>
                             </select>
                         </th>
                     </tr>
