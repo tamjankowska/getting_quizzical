@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './DeleteAccount.css';
+import Swal from 'sweetalert2';
 
 function DeleteAccount() {
     const history = useHistory();
@@ -28,13 +29,27 @@ function DeleteAccount() {
         }}).then((res) => {
             console.log(res.data);
             if (res.data.status === "Account deleted") {
-                alert("Account deleted");
+                Swal.fire({
+                    title: 'Account deleted!',
+                    imageUrl: 'https://i.gifer.com/685r.gif',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Olivia Newton John in Lets Get Physical video',
+                    confirmButtonColor: '#C4F43C'
+                });
                 sessionStorage.removeItem("email");
                 sessionStorage.removeItem("loggedIn");
                 sessionStorage.removeItem("userID");
                 history.push("/");
             } else {
-                alert(`${username}, your account has now been deleted.`);
+                Swal.fire({
+                    title: `${username}, your account has now been deleted.`,
+                    imageUrl: 'https://i.gifer.com/685r.gif',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Olivia Newton John in Lets Get Physical video',
+                    confirmButtonColor: '#C4F43C'
+                });
                 sessionStorage.removeItem("email");
                 sessionStorage.removeItem("loggedIn");
                 sessionStorage.removeItem("userID");
@@ -43,7 +58,14 @@ function DeleteAccount() {
                 history.push("/signup");
             }
         }).catch((err) => {
-            alert("Account not deleted.");
+            Swal.fire({
+                title: 'Account not deleted?!',
+                imageUrl: 'https://media0.giphy.com/media/5EftpGR63iNgY/giphy.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Olivia Newton John looking surprised',
+                confirmButtonColor: '#C4F43C'
+            });
         })
     }
 
