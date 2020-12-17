@@ -14,6 +14,7 @@ import Footer from './components/Footer/Footer';
 import Logout from './components/logout/Logout';
 import LoggedInStatus from './components/loggedinstatus/LoggedInStatus';
 import Faq from './components/Faq/Faq';
+import ProfilePage from './components/profilePage/ProfilePage';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/UserHistory" component={UserHistory} />
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/faq" component={Faq} />
+            <Route exact path="/profile" component={ProfilePage} />
           </Switch>
         </div>
         <footer className="app-footer">

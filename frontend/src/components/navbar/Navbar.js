@@ -22,7 +22,6 @@ class Navbar extends React.Component {
   render() {
     return (
       <div>
-        {/* {sessionStorage.getItem("loggedIn") ? ( */}
           <div className="navbar-container">
               <div className="logo-container">
                 <img className="logo" src={Logo} alt="Quizzical Logo" />
@@ -36,14 +35,14 @@ class Navbar extends React.Component {
                   <a href="/about">About</a>
                 </li>
               </ul>
-              <div className="user-container">
+              <a href="/profile"><div className="user-container">
                 <h2>
                   <img src={Profilepic} className="profile-pic"></img>
                   <p className="username-text">
                     {sessionStorage.getItem("username")}{" "}
                   </p>
                 </h2>
-              </div>
+              </div></a>
               <div className="logout-container">
                 <a className="logout-link" href="/logout">
                   <div
@@ -61,22 +60,6 @@ class Navbar extends React.Component {
                 </a>
               </div>
           </div>
-        {/* // ) : (
-        //   <div className="navbar-container">
-        //     <div className="logo-container">
-        //       <img className="logo" src={Logo} alt="Quizzical Logo" />
-        //     </div>
-
-        //     <ul className="navbar-text">
-        //       <li className="navbar-item">
-        //         <a href="/main">Home</a>
-        //       </li>
-        //       <li className="navbar-item">
-        //         <a href="/about">About</a>
-        //       </li>
-        //     </ul>
-        //   </div>
-        // )} */}
       </div>
     );
   }

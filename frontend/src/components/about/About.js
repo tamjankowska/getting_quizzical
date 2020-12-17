@@ -47,7 +47,7 @@ function About() {
                 </div>
                 
                 <div className="about-text-container">
-                    <p className="about-text">This is a quiz app inspired Olivia Newton John's 1981 hit, Let's Get Physical, in terms of the name and the 80s design.</p>
+                    <p className="about-text">This is a quiz app inspired by Olivia Newton John's 1981 hit, Let's Get Physical, in terms of the name and the 80s design.</p>
                     <p className="about-text">Users are able to choose either easy, medium or hard difficulties, and between multiple choice or true and false quiz types.</p>
                     <p className="about-text">Users can also pick which category they would like for the quiz. The category choices are:</p>
                     <ul className="fa-ul">
