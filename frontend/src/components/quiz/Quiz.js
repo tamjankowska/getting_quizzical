@@ -32,7 +32,7 @@ function Quiz() {
   };
 
   useEffect(() => {
-    if (questions.length == 0) {
+    if (questions.length === 0) {
       getQuestions();
     }
   });

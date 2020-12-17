@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function Timer(props) {
-    const [timeLeft, setTimeLeft] = useState(30);
+    // const [timeLeft, setTimeLeft] = useState(30);
 
     // useEffect(() => {
     //     if (timeLeft <= 30 && timeLeft >= 1) {
@@ -17,6 +17,6 @@ export default function Timer(props) {
     //     }
     //   });
     return(
-        <h1 className="quiz-timeLeft">{timeLeft}</h1>
+        <h1 className="quiz-timeLeft">timeleft</h1>
     )
 }

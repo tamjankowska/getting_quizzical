@@ -103,7 +103,7 @@ function Leaderboard() {
                                         && (result.difficulty.toLowerCase().includes(difficulty.toLowerCase()))
                                         && (result.category.toLowerCase().includes(searchCategory.toLowerCase()))) {
                                 return result
-                            } else if (!type && !difficulty && !searchCategory) {return result} else {return result}
+                            } else if (!type && !difficulty && !searchCategory) {return result}
 
                             }).map((result) => (
                                 <tr className="tableItems">

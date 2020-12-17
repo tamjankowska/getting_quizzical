@@ -16,7 +16,7 @@ function GameOver(props) {
           difficulty: sessionStorage.getItem('difficulty'),
           quizTakenAt: sessionStorage.getItem('quizTakenAt')
         }).then((res) => {
-          if (res.data.status == 'OK') {
+          if (res.data.status === 'OK') {
             alert('Results added to user history and leaderboard! 👌 ')
           } else {
             alert('Error saving results. Sorry, please try again! 😢 ')

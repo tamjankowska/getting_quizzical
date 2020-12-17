@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import Timer from './Timer.js';
+import React from 'react';
+// import Timer from './Timer.js';
 
 function Question(props) {
     
