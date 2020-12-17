@@ -33,7 +33,7 @@ function Mainpage() {
                 <Section heading="Random Quiz"
                     photo={su}
                     text="I don't care just give me my quiz fix!"
-                    link="/randomQuiz"
+                    link="/quiz"
                     button="Let's Get Into Quizzical" />
             </div>
             : <Logout />}

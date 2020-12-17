@@ -32,7 +32,7 @@ function Quiz() {
   };
 
   useEffect(() => {
-    if (questions.length == 0) {
+    if (questions.length === 0) {
       getQuestions();
     }
   });
@@ -107,7 +107,7 @@ function Quiz() {
         </button>
         {quizStarted ? playGame() : ""}
         {(!quizStarted && quizEnded) ? 
-          <GameOver points = {points}
+          <GameOver points = {points} quizEnded = {quizEnded}
           /> : ""} 
       </div>
     </div>

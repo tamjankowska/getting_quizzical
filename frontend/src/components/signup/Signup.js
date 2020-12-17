@@ -19,7 +19,7 @@ function Signup() {
             passwordCheck: passwordCheck
         }).then((res) => {
             console.log(res.data.result);
-            if (res.data.status == 'OK') {
+            if (res.data.status === 'OK') {
                 sessionStorage.setItem('loggedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);

@@ -30,6 +30,10 @@ input {
     padding: 5%;
     border-radius: 25px;
 }
+.landing-container a {
+    color: white;
+    text-decoration: none;
+}
 
 .email-container {
     display: flex;

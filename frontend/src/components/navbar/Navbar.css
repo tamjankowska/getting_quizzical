@@ -47,19 +47,19 @@
     color: #FFFFFF;
 }
 
-.navbar-item, a:visited {
+.navbar-item a:visited {
     color: #FFFFFF;
     text-decoration: none;
 }
-.navbar-item, a:link {
+.navbar-item a:link {
     color: #FFFFFF;
     text-decoration: none;
 }
-.navbar-item, a:visited:active {
+.navbar-item a:visited:active {
     color: #FFFFFF;
     text-decoration: none;
 }
-.navbar-item, a:hover {
+.navbar-item a:hover {
     color: #FFFFFF;
     text-decoration: none;
 }
@@ -68,6 +68,9 @@
     display: flex;
     flex-direction: column;
     margin-top: -1.5%;
+}
+.navbar-container a, .logout-container a {
+    text-decoration: none;
 }
 
 .profile-pic {
