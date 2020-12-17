@@ -60,7 +60,7 @@ function UserHistory() {
                     </tr>
                 </thead>
                 <tbody>
-                    {Results.length ? <></> : <p id="no-quizztory-p">You have no quiz history! <a href="/quiz" id="play-quiz-link">Click here</a> to play your first quiz!</p>}
+                    {Results.length ? null : <p id="no-quizztory-p">You have no quiz history! <a href="/quiz" id="play-quiz-link">Click here</a> to play your first quiz!</p>}
                     {Results.filter((result) => {
                         if ((result.quizType.toLowerCase().includes(type.toLowerCase()))
                             && !difficulty
