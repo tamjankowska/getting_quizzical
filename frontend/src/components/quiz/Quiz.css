@@ -15,7 +15,7 @@
     width: 30vw;
     height: 20vh;
     color: rgb(218, 199, 206);
-    margin: 10% 10% 25% 35%;
+    margin: 10% 10% 10% 35%;
     font-size: 2em;
     font-family: 'Bungee Shade';
     background: linear-gradient(90deg, rgba(131, 58, 180, 0.712) 0%, rgba(252, 43, 120, 0.774) 50%, rgba(69, 249, 252, 0.76) 100%);
@@ -36,7 +36,7 @@
     width: 50vw;
     display: flex;
     margin-left: 22.2%;
-    margin-top: 15%;
+    margin-top: 3%;
     padding: 2.5%;
     flex-direction: column;
     background: linear-gradient(-45deg, rgba(131, 58, 180, 0.712), rgba(252, 43, 120, 0.774), rgba(69, 249, 252, 0.76));
@@ -85,6 +85,32 @@
     text-align: center;
 }
 
+.allAnswers {
+    margin: 7% 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.answer-button {
+    flex-basis: 40%;
+    background-color: transparent;
+    color: white;
+    font-size: 2em;
+    font-family: 'Jost', sans-serif;
+    margin: 1%;
+    padding: 2% 0 0 0;
+    border: 0.1em transparent groove;
+}
+
+.answer-button:hover {
+    border: 0.1em groove;
+    border-image-source: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    border-image-slice: 1;
+}
+
 .quiz-nextQuestion {
     font-family: 'Righteous', sans-serif;
     font-size: 2em;
@@ -98,8 +124,46 @@
     padding: 1%;
 }
 
-.quiz-nextQuestion:hover {
+#restartQuiz {
+    font-family: 'Righteous', sans-serif;
+    font-size: 2em;
+    width: 20vw;
+    margin-top: 5%;
+    margin-left: 10.5%;
+    background: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    border: 0.05em groove;
+    border-image-source: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    border-image-slice: 1;
+    color: white;
+    padding: 3%;
+    animation: flash 1s ease;
+    animation-iteration-count: infinite;
+}
+
+.restart-quiz-container {
+    margin-top: 5%;
+    margin-right: 10%;
+    padding: 0;
+}
+.quiz-nextQuestion:hover, #restartQuiz:hover {
     background: linear-gradient(60deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
     font-size: 2.1em;
 
+}
+
+@keyframes flash {
+	0% {
+        background: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+	}
+	50% {
+        background: linear-gradient(30deg,#cf53bb 10%,#dddd2b 25%,#4bcc44 50%,#00eaff 75%,#9d5fd3 90%);
+	}
+	100% {
+        background: linear-gradient(30deg,#d367c1 10%,#dedf40 25%,#62cb5c 50%,#00bbcb 75%,#ab79d6 90%);
+    }
+}
+
+.game-over-container {
+    margin: -20% 30% 0% 30%;
+    padding-left: 7%;
 }

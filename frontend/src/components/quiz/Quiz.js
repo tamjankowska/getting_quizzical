@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Quiz.css";
 import axios from "axios";
-import Question from './question';
+import Question from './Question';
+import GameOver from './GameOver';
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
   const [quizStarted, setQuizStarted] = useState(false);
+  const [quizEnded, setQuizEnded] = useState(false);
   const [index, setIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [points, setPoints] = useState(0);
@@ -64,6 +66,7 @@ function Quiz() {
     if (index === 10) {
       alert("How quizzical did you get?! Your total score is: " + points);
       setQuizStarted(false)
+      setQuizEnded(true);
       return;
     }
 
@@ -102,7 +105,10 @@ function Quiz() {
         <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
           Ready? Let's get quizzical!
         </button>
-        {quizStarted ? playGame() : "Game OVER."}
+        {quizStarted ? playGame() : ""}
+        {(!quizStarted && quizEnded) ? 
+          <GameOver points = {points}
+          /> : ""} 
       </div>
     </div>
   );
