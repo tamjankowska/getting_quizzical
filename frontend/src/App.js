@@ -17,9 +17,6 @@ import Faq from './components/Faq/Faq';
 
 
 function App() {
-
-
-
   return (
     <div className="App">
       <BrowserRouter>
