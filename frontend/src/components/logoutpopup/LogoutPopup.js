@@ -20,11 +20,11 @@ function LogoutPopup() {
         sessionTimeoutRef.current = setTimeout(logOut, 500000);
     };
 
-    const stayActive = () => {
-        setModalIsOpen(false);
-        clearTimeout(sessionTimeoutRef.current);
-        console.log("User is active");
-    };
+    // const stayActive = () => {
+    //     setModalIsOpen(false);
+    //     clearTimeout(sessionTimeoutRef.current);
+    //     console.log("User is active");
+    // };
 
     const logOut = () => {
         setModalIsOpen(false);
