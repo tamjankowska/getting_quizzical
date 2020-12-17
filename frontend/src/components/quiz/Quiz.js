@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Quiz.css";
 import axios from "axios";
-import Question from './Question';
-import GameOver from './GameOver';
+import Question from "./Question";
+import GameOver from "./GameOver";
+import QuizSelection from "./QuizSelection";
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -11,24 +12,33 @@ function Quiz() {
   const [index, setIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [points, setPoints] = useState(0);
+  const [difficulty, setDifficulty] = useState("");
+  const [type, setType] = useState("");
+  const [category, setCategory] = useState("");
+  const [url, setUrl] = useState("");
 
   const getQuestions = async () => {
-    let url = `https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`;
-    await axios.get(url).then((res) => {
-      let data = res.data.results.map((question) => {
-        return {
-          category: question.category,
-          type: question.type,
-          difficulty: question.difficulty,
-          question: question.question,
-          answers: shuffle([...question.incorrect_answers, question.correct_answer]),
-          correctAnswer: question.correct_answer
-        }
+    await axios
+      .get(url)
+      .then((res) => {
+        let data = res.data.results.map((question) => {
+          return {
+            category: question.category,
+            type: question.type,
+            difficulty: question.difficulty,
+            question: question.question,
+            answers: shuffle([
+              ...question.incorrect_answers,
+              question.correct_answer,
+            ]),
+            correctAnswer: question.correct_answer,
+          };
+        });
+        setQuestions(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      setQuestions(data)      
-    }).catch((err) => {
-      console.log(err)
-    });
   };
 
   useEffect(() => {
@@ -65,7 +75,7 @@ function Quiz() {
   const playGame = () => {
     if (index === 10) {
       alert("How quizzical did you get?! Your total score is: " + points);
-      setQuizStarted(false)
+      setQuizStarted(false);
       setQuizEnded(true);
       return;
     }
@@ -73,17 +83,17 @@ function Quiz() {
     return (
       <div className="quizBeingPlayed">
         <div className="quizItems">
-          <Question 
-            question = {questions[index]} 
-            index = {index}
-            setIndex = {setIndex}
-            points = {points}
-            setPoints = {setPoints}
-            timeLeft = {timeLeft}
-            setTimeLeft = {setTimeLeft} 
-            />
+          <Question
+            question={questions[index]}
+            index={index}
+            setIndex={setIndex}
+            points={points}
+            setPoints={setPoints}
+            timeLeft={timeLeft}
+            setTimeLeft={setTimeLeft}
+          />
 
-        {/* <h1 className="quiz-timeLeft">{timeLeft}</h1>
+          {/* <h1 className="quiz-timeLeft">{timeLeft}</h1>
             <button
               className="quiz-nextQuestion"
               onClick={() => {
@@ -94,7 +104,6 @@ function Quiz() {
               Next Question!
             </button> */}
         </div>
-       
       </div>
     );
   };
@@ -102,13 +111,22 @@ function Quiz() {
   return (
     <div className="quizWrapper">
       <div className="quizData">
-        <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
-          Ready? Let's get quizzical!
-        </button>
+          <QuizSelection 
+            category = {category}
+            setCategory = {setCategory} 
+            difficulty = {difficulty} 
+            setDifficulty = {setDifficulty}
+            type = {type}
+            setType = {setType}
+            url = {url}
+            setUrl = {setUrl}
+          />
+          <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
+            Ready? Let's get quizzical!
+          </button>
+
         {quizStarted ? playGame() : ""}
-        {(!quizStarted && quizEnded) ? 
-          <GameOver points = {points} quizEnded = {quizEnded}
-          /> : ""} 
+        {!quizStarted && quizEnded ? <GameOver points={points} /> : ""}
       </div>
     </div>
   );
