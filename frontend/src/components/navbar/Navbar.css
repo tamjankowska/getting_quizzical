@@ -19,7 +19,7 @@
     display: flex;
     justify-content: flex-start;
     width: 33.3%;
-    margin: 1%;
+    margin: 0.25%;
 }
 
 .logo {
@@ -66,25 +66,31 @@
 
 .user-container {
     display: flex;
-    flex-direction: column;
-    margin-top: -1.5%;
+    align-content: center;
+    justify-content: center;
+    width: 15%;
 }
 .navbar-container a, .logout-container a {
     text-decoration: none;
 }
 
 .profile-pic {
-    width: 80px;
-    height: 85px;
+    width: 30%;
+    height: auto;
+    position: relative;
     border-radius: 50%;
     border: 3.2px solid #FA6086;
+    transition: 2s;
 }
 
 .username-text {
     font-family: 'Jost', sans-serif;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 22px;
+    display: flex;
+    padding: 10%;
+    align-content: center;
     color: #FA6086;
 }
 
@@ -111,4 +117,22 @@
     font-family: 'Jost', sans-serif;
     margin: 0;
     font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    .navbar-text {
+        display: none;
+    }
+    .user-container {
+        display: none;
+    }
+    .navbar-container {
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .logo-container img{
+        width: 100%;
+    }
 }

@@ -7,7 +7,8 @@ function About() {
         <div>
             <div className="about-container">
                 <IdleTimer />
-                <svg>
+                <div className="svg-container">
+                <svg viewBox="0 0 0 0">
                 <defs>
                     <filter id="stroke">
                         <feMorphology operator="dilate" radius="1" in="SourceGraphic" result="outside" />
@@ -41,13 +42,12 @@ function About() {
 		                </feMerge>
                     </filter>
                 </defs>
-                </svg>
-                <div className="centered">
-                    <div className="neon">About Let's Get Quizzical</div>
-                </div>
+            </svg>
+            <span className="neon-text">About</span>
+            </div>
                 
                 <div className="about-text-container">
-                    <p className="about-text">This is a quiz app inspired by Olivia Newton John's 1981 hit, Let's Get Physical, in terms of the name and the 80s design.</p>
+                    <p className="about-text">Let's Get Quizzical is a quiz app inspired by Olivia Newton John's 1981 hit, Let's Get Physical, in terms of the name and the 80s design.</p>
                     <p className="about-text">Users are able to choose either easy, medium or hard difficulties, and between multiple choice or true and false quiz types.</p>
                     <p className="about-text">Users can also pick which category they would like for the quiz. The category choices are:</p>
                     <ul className="fa-ul">

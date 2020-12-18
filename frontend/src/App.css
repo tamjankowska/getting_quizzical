@@ -44,6 +44,6 @@ body {
 
 @media (max-width: 480px) {
     footer {
-        visibility: collapse;
+        display: none;
     }
 }

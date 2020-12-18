@@ -12,6 +12,10 @@
     color: white;
     text-align: center;
 }
+.signup-container a {
+    color: white;
+    text-decoration: none;
+}
 
 .signup-form {
     display: flex;
@@ -50,4 +54,15 @@
 
 .password-check {
     margin: 0px 0px 10px 15px;
+}
+
+@media (max-width: 480px) {
+    .signup-container {
+        margin-top: -150%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .signup-container {
+        font-size: 10px;
+    }
 }

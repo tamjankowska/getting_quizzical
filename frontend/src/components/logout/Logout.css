@@ -18,3 +18,14 @@
 .redirect-countdown {
     color: white;
 }
+
+@media (max-width: 480px) {
+    .logged-out-container {
+        margin-top: -150%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .logout-container {
+        font-size: 10px;
+    }
+}

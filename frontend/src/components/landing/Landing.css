@@ -87,3 +87,14 @@ input {
     text-decoration: none; 
     color:#FA6086;
 }
+
+@media (max-width: 480px) {
+    .landing-container {
+        margin-top: -150%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .landing-container {
+        font-size: 10px;
+    }
+}

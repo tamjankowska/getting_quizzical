@@ -5,7 +5,8 @@ import './ProfilePage.css';
 function ProfilePage() {
     return (
         <div className="profile-container">
-            <svg>
+            <div className="svg-container">
+            <svg viewBox="0 0 0 0">
                 <defs>
                     <filter id="stroke">
                         <feMorphology operator="dilate" radius="1" in="SourceGraphic" result="outside" />
@@ -40,8 +41,7 @@ function ProfilePage() {
                     </filter>
                 </defs>
             </svg>
-            <div className="profile-title-container">
-                <div className="neon">Profile Page</div>
+            <span className="neon-text">Profile Page</span>
             </div>
                 
             <h1 className="delete-acc-text">Delete your account?</h1>

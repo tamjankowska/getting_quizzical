@@ -4,6 +4,7 @@ import Logo from "../../images/invquizzical_logo2.svg";
 import Wink from '../../images/invquizzical_logowink.svg';
 import { FaDoorClosed, FaDoorOpen } from "react-icons/fa";
 import Profilepic from "../../images/profilepic.png";
+import Profilepic2 from "../../images/profilepic2.jpg";
 
 class Navbar extends React.Component {
   constructor() {
@@ -11,9 +12,11 @@ class Navbar extends React.Component {
     this.state = {
       isHovered: false,
       isWinking: false,
+      isNeil: false,
     };
     this.toggleHover = this.toggleHover.bind(this);
     this.toggleWink = this.toggleWink.bind(this);
+    this.toggleNeil = this.toggleNeil.bind(this);
   }
 
   toggleHover() {
@@ -22,6 +25,10 @@ class Navbar extends React.Component {
   toggleWink() {
     this.setState((prevState) => ({ isWinking: !prevState.isWinking }));
   }
+  toggleNeil() {
+    this.setState((prevState) => ({ isNeil: !prevState.isNeil }));
+  }
+
   
 
   render() {
@@ -30,8 +37,8 @@ class Navbar extends React.Component {
           <div className="navbar-container">
               <div className="logo-container" onMouseEnter={this.toggleWink} onMouseLeave={this.toggleWink}>
                 {this.state.isWinking ? (
-                  <img className="logo" src={Wink} alt="Quizzical Logo" />)
-                  : (<img className="logo" src={Logo} alt="Quizzical Logo" />
+                  <a href="/main" ><img className="logo" src={Wink} alt="Quizzical Logo" /></a>)
+                  : (<a href="/main" ><img className="logo" src={Logo} alt="Quizzical Logo" /></a>
                 )}
               </div>
               <ul className="navbar-text">
@@ -42,14 +49,12 @@ class Navbar extends React.Component {
                   <a href="/about">About</a>
                 </li>
               </ul>
-              <a href="/profile"><div className="user-container">
-                <h2>
-                  <img src={Profilepic} className="profile-pic" alt="profile pic"></img>
+              <a href="/profile" className="user-container" onMouseEnter={this.toggleNeil} onMouseLeave={this.toggleNeil}> 
+                  {this.state.isNeil ? (<img src={Profilepic2} className="profile-pic" alt="profile pic" />) : (<img src={Profilepic} className="profile-pic" alt="profile pic" />)}
                   <p className="username-text">
                     {sessionStorage.getItem("username")}{" "}
                   </p>
-                </h2>
-              </div></a>
+              </a>
               <div className="logout-container">
                 <a className="logout-link" href="/logout">
                   <div

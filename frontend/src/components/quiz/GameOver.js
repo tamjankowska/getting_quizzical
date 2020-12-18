@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function GameOver(props) {
 
@@ -17,10 +18,24 @@ function GameOver(props) {
           quizTakenAt: Date.now()
         }).then((res) => {
           if (res.data.status == 'OK') {
-            //   props.setResultsSent(true)
-            alert('Results added to user history and leaderboard! 👌 ')
+            Swal.fire({
+              title: 'Results added to user history and leaderboard! 👌',
+              imageUrl: 'https://i.gifer.com/9xdB.gif',
+              imageWidth: 300,
+              imageHeight: 200,
+              imageAlt: 'Man on exercise bike with Olivia Newton John',
+              confirmButtonColor: '#C4F43C'
+            });
+
           } else {
-            alert('Error saving results. Sorry, please try again! 😢 ')
+            Swal.fire({
+              title: 'Error saving results. Sorry, please try again! 😢',
+              imageUrl: 'https://media0.giphy.com/media/5EftpGR63iNgY/giphy.gif',
+              imageWidth: 400,
+              imageHeight: 200,
+              imageAlt: 'Olivia Newton John looking surprised',
+              confirmButtonColor: '#C4F43C'
+            });
           }
         }).catch((err) => {
           console.log(err)
@@ -42,7 +57,8 @@ function GameOver(props) {
 
     return (
         <div className = "game-over-container">
-            <svg>
+            <div className="svg-container">
+            <svg viewBox="0 0 0 0">
                 <defs>
                     <filter id="stroke">
                         <feMorphology operator="dilate" radius="1" in="SourceGraphic" result="outside" />
@@ -76,10 +92,9 @@ function GameOver(props) {
 		                </feMerge>
                     </filter>
                 </defs>
-                </svg>
-                <div className="game-over-text">
-                    <div className="neon">Game over!</div>
-                </div>
+            </svg>
+            <span className="neon-text">Game Over!</span>
+            </div>
                 <div className = "restart-quiz-container">
                     <button id="restartQuiz" value="restartQuiz" onClick={restartQuiz}>Play another round?</button>
                 </div>
