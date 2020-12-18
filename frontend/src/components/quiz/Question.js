@@ -1,5 +1,5 @@
 import React from 'react';
-// import Timer from './Timer.js';
+import Swal from 'sweetalert2';
 
 function Question(props) {
     
@@ -22,19 +22,32 @@ function Question(props) {
 
     const questionCorrect = () => {
         if (props.timeLeft >= 0) {
-          props.setIndex(props.index + 1);
-          props.setPoints(props.points + 10)
-          
-          alert(props.index + "Correct! Total points: " + (props.points + 10));
+            props.setIndex(props.index + 1);
+            props.setPoints(props.points + 10)
+                Swal.fire({
+                    title: 'props.index + "Correct! Total points: " + (props.points + 10)',
+                    imageUrl: 'https://i.imgur.com/r3VHXOc.gif',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Mans stomach',
+                    confirmButtonColor: '#C4F43C'
+                });
         }
-      };
+    };
 
-      const questionIncorrect = () => {
+    const questionIncorrect = () => {
         if (props.timeLeft >= 0) {
-          props.setIndex(props.index + 1);
-          alert(`${props.index} Incorrect. The correct answer was: '${props.question.correctAnswer}'. Total points: ${props.points}`);
+        props.setIndex(props.index + 1);
+            Swal.fire({
+                title: `${props.index} Incorrect. The correct answer was: '${props.question.correctAnswer}'. Total points: ${props.points}`,
+                imageUrl: 'https://i.imgur.com/eJTOaZh.gif',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Men exercising',
+                confirmButtonColor: '#C4F43C'
+            });
         }
-      };
+    };
 
     return (
         
