@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import Swal from 'sweetalert2';
@@ -12,13 +12,12 @@ function GameOver(props) {
           userID: sessionStorage.getItem('userID'),
           username: sessionStorage.getItem('username'),
           points: props.points,
-          category: sessionStorage.getItem('category'),
-          quizType: sessionStorage.getItem('quizType'),
-          difficulty: sessionStorage.getItem('difficulty'),
-          quizTakenAt: sessionStorage.getItem('quizTakenAt')
+          category: props.category,
+          quizType: props.type,
+          difficulty: props.difficulty,
+          quizTakenAt: Date.now()
         }).then((res) => {
           if (res.data.status == 'OK') {
-            history.go(0);
             Swal.fire({
               title: 'Results added to user history and leaderboard! 👌',
               imageUrl: 'https://i.gifer.com/9xdB.gif',
@@ -27,6 +26,7 @@ function GameOver(props) {
               imageAlt: 'Man on exercise bike with Olivia Newton John',
               confirmButtonColor: '#C4F43C'
             });
+
           } else {
             Swal.fire({
               title: 'Error saving results. Sorry, please try again! 😢',
@@ -43,13 +43,17 @@ function GameOver(props) {
       }
     const restartQuiz = (event) => {
       history.go(0)
+      props.setQuizStarted(false);
     } 
 
-    useEffect(() => {
-      if (props.quizEnded === true) {
-        saveResults();
-      }
-    })
+    // useEffect(() => {
+    //     if (props.resultsSent === true) {
+    //         sessionStorage.removeItem('difficulty');
+    //         sessionStorage.removeItem('category');
+    //         sessionStorage.removeItem('type');
+    //         sessionStorage.removeItem('quizTakenAt');
+    //     }
+    // }) 
 
     return (
         <div className = "game-over-container">

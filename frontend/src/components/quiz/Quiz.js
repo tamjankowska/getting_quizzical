@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Quiz.css";
 import axios from "axios";
-import Question from './Question';
-import GameOver from './GameOver';
 import Swal from 'sweetalert2';
+
+import Question from "./Question";
+import GameOver from "./GameOver";
+import QuizSelection from "./QuizSelection";
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -12,28 +14,49 @@ function Quiz() {
   const [index, setIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(30);
   const [points, setPoints] = useState(0);
+  const [url, setUrl] = useState("");
+  const [resultsSent, setResultsSent] = useState(false);
+  const [category, setCategory] = useState("");
+  const [difficulty, setDifficulty] = useState("");
+  const [type, setType] = useState("");
 
   const getQuestions = async () => {
-    let url = `https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple`;
-    await axios.get(url).then((res) => {
-      let data = res.data.results.map((question) => {
-        return {
-          category: question.category,
-          type: question.type,
-          difficulty: question.difficulty,
-          question: question.question,
-          answers: shuffle([...question.incorrect_answers, question.correct_answer]),
-          correctAnswer: question.correct_answer
-        }
+    // setResultsSent(false);
+    // let category = sessionStorage.getItem('category');
+    // let difficulty = sessionStorage.getItem('difficulty');
+    // let type = sessionStorage.getItem('type');
+
+    let url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=${type}`;
+    console.log(url)
+    console.log('difficulty', difficulty)
+    console.log('type', type)
+    console.log('category', category)
+    
+    await axios
+      .get(url)
+      .then((res) => {
+        let data = res.data.results.map((question) => {
+          return {
+            category: question.category,
+            type: question.type,
+            difficulty: question.difficulty,
+            question: question.question,
+            answers: shuffle([
+              ...question.incorrect_answers,
+              question.correct_answer,
+            ]),
+            correctAnswer: question.correct_answer,
+          };
+        });
+        setQuestions(data);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-      setQuestions(data)      
-    }).catch((err) => {
-      console.log(err)
-    });
   };
 
   useEffect(() => {
-    if (questions.length === 0) {
+    if (questions.length === 0 && quizStarted) {
       getQuestions();
     }
   });
@@ -81,17 +104,19 @@ function Quiz() {
     return (
       <div className="quizBeingPlayed">
         <div className="quizItems">
-          <Question 
-            question = {questions[index]} 
-            index = {index}
-            setIndex = {setIndex}
-            points = {points}
-            setPoints = {setPoints}
-            timeLeft = {timeLeft}
-            setTimeLeft = {setTimeLeft} 
-            />
+          {(questions[index]) ?
+          <Question
+            question={questions[index]}
+            index={index}
+            setIndex={setIndex}
+            points={points}
+            setPoints={setPoints}
+            timeLeft={timeLeft}
+            setTimeLeft={setTimeLeft}
+          />
+          : "" }
 
-        {/* <h1 className="quiz-timeLeft">{timeLeft}</h1>
+          {/* <h1 className="quiz-timeLeft">{timeLeft}</h1>
             <button
               className="quiz-nextQuestion"
               onClick={() => {
@@ -102,7 +127,6 @@ function Quiz() {
               Next Question!
             </button> */}
         </div>
-       
       </div>
     );
   };
@@ -110,13 +134,29 @@ function Quiz() {
   return (
     <div className="quizWrapper">
       <div className="quizData">
-        <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
-          Ready? Let's get quizzical!
-        </button>
+          <QuizSelection 
+            url = {url}
+            setUrl = {setUrl}
+            difficulty = {difficulty}
+            setDifficulty = {setDifficulty}
+            category = {category}
+            setCategory = {setCategory}
+            type = {type}
+            setType = {setType}
+          />
+          <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
+            Ready? Let's get quizzical!
+          </button>
+
         {quizStarted ? playGame() : ""}
-        {(!quizStarted && quizEnded) ? 
-          <GameOver points = {points} quizEnded = {quizEnded}
-          /> : ""} 
+        {!quizStarted && quizEnded ? 
+          <GameOver 
+            points={points} 
+            type = {type} 
+            difficulty = {difficulty}
+            setQuizStarted = {setQuizStarted}
+             
+          /> : ""}
       </div>
     </div>
   );

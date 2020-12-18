@@ -2,10 +2,8 @@ import React from 'react';
 import Swal from 'sweetalert2';
 
 function Question(props) {
+    console.log(props)
     
-    sessionStorage.setItem('category', props.question.category)
-    sessionStorage.setItem('difficulty', props.question.difficulty)
-    sessionStorage.setItem('quizType', props.question.type)
     sessionStorage.setItem('quizTakenAt', Date.now())
 
     const clickAnswer = (event) => {
