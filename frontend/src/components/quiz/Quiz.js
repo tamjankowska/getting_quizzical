@@ -16,22 +16,12 @@ function Quiz() {
   const [points, setPoints] = useState(0);
   const [url, setUrl] = useState("");
   const [resultsSent, setResultsSent] = useState(false);
-  const [category, setCategory] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [type, setType] = useState("");
+  const [category, setCategory] = useState("9");
+  const [difficulty, setDifficulty] = useState("easy");
+  const [type, setType] = useState("boolean");
 
   const getQuestions = async () => {
-    // setResultsSent(false);
-    // let category = sessionStorage.getItem('category');
-    // let difficulty = sessionStorage.getItem('difficulty');
-    // let type = sessionStorage.getItem('type');
-
     let url = `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=${type}`;
-    console.log(url)
-    console.log('difficulty', difficulty)
-    console.log('type', type)
-    console.log('category', category)
-    
     await axios
       .get(url)
       .then((res) => {
@@ -72,20 +62,6 @@ function Quiz() {
     return shuffledArray;
   };
 
-  // useEffect(() => {
-  //   if (timeLeft <= 30 && timeLeft >= 1) {
-  //     const timer = setInterval(() => {
-  //       setTimeLeft(timeLeft - 1);
-  //     }, 1000);
-  //     return () => clearInterval(timer);
-  //   }
-  //   if (timeLeft === 0) {
-  //     console.log(questions[index +1])
-  //     setIndex(index + 1);
-  //     return;
-  //   }
-  // });
-
   const playGame = () => {
     if (index === 10) {
       Swal.fire({
@@ -115,17 +91,6 @@ function Quiz() {
             setTimeLeft={setTimeLeft}
           />
           : "" }
-
-          {/* <h1 className="quiz-timeLeft">{timeLeft}</h1>
-            <button
-              className="quiz-nextQuestion"
-              onClick={() => {
-                setIndex(index + 1);
-                setTimeLeft(30);
-              }}
-            >
-              Next Question!
-            </button> */}
         </div>
       </div>
     );
@@ -133,31 +98,36 @@ function Quiz() {
 
   return (
     <div className="quizWrapper">
-      <div className="quizData">
-          <QuizSelection 
-            url = {url}
-            setUrl = {setUrl}
-            difficulty = {difficulty}
-            setDifficulty = {setDifficulty}
-            category = {category}
-            setCategory = {setCategory}
-            type = {type}
-            setType = {setType}
-          />
-          <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
-            Ready? Let's get quizzical!
-          </button>
-
-        {quizStarted ? playGame() : ""}
-        {!quizStarted && quizEnded ? 
-          <GameOver 
+      {(quizEnded) ? <GameOver 
             points={points} 
             type = {type} 
             difficulty = {difficulty}
+            category = {category}
             setQuizStarted = {setQuizStarted}
+            quizEnded = {quizEnded}
              
-          /> : ""}
-      </div>
+          /> :
+        <>
+          {(quizStarted && !quizEnded) ? playGame() :
+          <div className="quizData">
+              <QuizSelection 
+                url = {url}
+                setUrl = {setUrl}
+                difficulty = {difficulty}
+                setDifficulty = {setDifficulty}
+                category = {category}
+                setCategory = {setCategory}
+                type = {type}
+                setType = {setType}
+              />
+              <button id="startQuiz" value="startQuiz" onClick={startQuiz}>
+                Ready? Let's get quizzical!
+              </button>
+          </div>
+          } 
+        </>
+      }
+  
     </div>
   );
 }
