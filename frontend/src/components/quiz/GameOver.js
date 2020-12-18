@@ -11,10 +11,10 @@ function GameOver(props) {
           userID: sessionStorage.getItem('userID'),
           username: sessionStorage.getItem('username'),
           points: props.points,
-          category: sessionStorage.getItem('category'),
-          quizType: sessionStorage.getItem('type'),
-          difficulty: sessionStorage.getItem('difficulty'),
-          quizTakenAt: sessionStorage.getItem('quizTakenAt')
+          category: props.category,
+          quizType: props.type,
+          difficulty: props.difficulty,
+          quizTakenAt: Date.now()
         }).then((res) => {
           if (res.data.status == 'OK') {
             //   props.setResultsSent(true)
@@ -28,6 +28,7 @@ function GameOver(props) {
       }
     const restartQuiz = (event) => {
       history.go(0)
+      props.setQuizStarted(false);
     } 
 
     // useEffect(() => {

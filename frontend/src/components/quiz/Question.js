@@ -2,6 +2,7 @@ import React from 'react';
 // import Timer from './Timer.js';
 
 function Question(props) {
+    console.log(props)
     
     sessionStorage.setItem('quizTakenAt', Date.now())
 

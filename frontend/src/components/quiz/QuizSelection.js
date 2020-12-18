@@ -10,7 +10,7 @@ function QuizSelection(props) {
             <select
               name="difficulty"
               onChange={(event) => {
-                sessionStorage.setItem('difficulty', event.target.value);
+                props.setDifficulty(event.target.options[event.target.selectedIndex].value);
               }}
             >
               <option value="">
@@ -28,7 +28,8 @@ function QuizSelection(props) {
             <select
               name="type"
               onChange={(event) => { 
-                sessionStorage.setItem('type', event.target.value);
+                props.setType(event.target.options[event.target.selectedIndex].value);
+                console.log(props.type)
               }}
             >
               <option value="">
@@ -45,7 +46,8 @@ function QuizSelection(props) {
             <select
               name="category"
               onChange={(event) => {
-                sessionStorage.setItem('category', event.target.value);
+                props.setCategory(event.target.options[event.target.selectedIndex].value);
+                console.log(props.category)
               }}
             >
               <option value="">
