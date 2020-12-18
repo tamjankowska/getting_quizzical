@@ -64,7 +64,6 @@ function Leaderboard() {
                             </tr>
                         </thead>
                         <tbody>
-
                             {Results.filter((result) => {
                                 // C D T
                                 // 0 0 0 :)
