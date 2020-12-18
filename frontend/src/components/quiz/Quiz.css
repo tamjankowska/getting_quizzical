@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 
-.quizSelection {
+.quizData {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
