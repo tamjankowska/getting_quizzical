@@ -50,7 +50,20 @@ function Question(props) {
         
         <div>
             <h1 className="question">
-                {props.question.question}
+                {props.question.question.replace('&#039;', "'")
+                .replace('&#O39', "'")
+                .replace('&quot;', '"')
+                .replace('&QUOT;', '"')
+                .replace('&qu0t;','"')
+                .replace('&ecirc;', 'ê')
+                .replace('&ndash;', '-')
+                .replace('&ldquo;', '"')
+                .replace('&rdquo;', '"')
+                .replace('&eacute;', 'é')
+                .replace('&ocirc;', 'ô')
+                .replace('&uuml;', 'ü')
+                .replace('&Uuml;', 'Ü')
+                }
             </h1>
             <h2 className="category-difficulty">
               {props.question.category} | {props.question.difficulty}

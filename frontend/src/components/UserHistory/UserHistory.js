@@ -51,7 +51,7 @@ function UserHistory() {
                         <th>Quiz Type<br />
                             <select name='type' onChange={event => { setType(event.target.value) }}>
                                 <option value="" selected>All</option>
-                                <option value='True/False'>True/False</option>
+                                <option value='Boolean'>Boolean</option>
                                 <option value='Multiple'>Multiple</option>
                             </select>
                         </th>
@@ -93,7 +93,30 @@ function UserHistory() {
                     }).map((result) =>  (
                         <tr className="tableItems">
                             <td className="Points" key={pointsID}>{result.points}</td>
-                            <td className="quizcategory" key={categoryID}>{result.category}</td>
+                            <td className="quizcategory" key={categoryID}>{result.category.replace(9, 'General Knowledge')
+                                        .replace(10, 'Entertainment: Books')
+                                        .replace(11, 'Entertainment: Film')
+                                        .replace(12, 'Entertainment: Music')
+                                        .replace(13, 'Musicals & Theatres')
+                                        .replace(14, 'Entertainment: Television')
+                                        .replace(15, 'Entertainment: Video Games')
+                                        .replace(16, 'Entertainment: Board Games')
+                                        .replace(17, 'Science & Nature')
+                                        .replace(18, 'Science: Computers')
+                                        .replace(19, 'Science: Mathematics')
+                                        .replace(20, 'Mythology')
+                                        .replace(21, 'Sports')
+                                        .replace(22, 'Geography')
+                                        .replace(23, 'History')
+                                        .replace(24, 'Politics')
+                                        .replace(25, 'Art')
+                                        .replace(26, 'Celebrities')
+                                        .replace(27, 'Animals')
+                                        .replace(28, 'Vehicles')
+                                        .replace(29, 'Entertainment: Comics')
+                                        .replace(30, 'Science: Gadgets')
+                                        .replace(31, 'Japanese Anime & Manga')
+                                        .replace(32, 'Entertainment: Cartoon & Animations')}</td>
                             <td className="difficulty" key={difficultyID}>{result.difficulty}</td>
                             <td className="quizType" key={typeID}>{result.quizType}</td>
                         </tr>
