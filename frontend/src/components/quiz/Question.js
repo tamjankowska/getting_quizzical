@@ -25,7 +25,7 @@ function Question(props) {
             props.setIndex(props.index + 1);
             props.setPoints(props.points + 10)
                 Swal.fire({
-                    title: 'props.index + "Correct! Total points: " + (props.points + 10)',
+                    title: `${props.index} Correct! Total points: ${props.points + 10}`,
                     imageUrl: 'https://i.imgur.com/r3VHXOc.gif',
                     imageWidth: 300,
                     imageHeight: 200,
