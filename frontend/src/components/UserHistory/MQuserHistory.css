@@ -1,6 +1,7 @@
 @media (max-width: 480px) {   
-    .table-wrapper {
+    .table-wrapper-uh {
         width: 90vw;
+        margin-top: -600px;
     }
     .content-table {
         font-size: 3vw;

@@ -25,8 +25,8 @@ class NavbarLO extends React.Component {
             <div class="navbar-container">
               <div className="logo-container" onMouseEnter={this.toggleWink} onMouseLeave={this.toggleWink}>
                 {this.state.isWinking ? (
-                  <img className="logo" src={Wink} alt="Quizzical Logo" />)
-                  : (<img className="logo" src={Logo} alt="Quizzical Logo" />
+                  <a href="/" ><img className="logo" src={Wink} alt="Quizzical Logo" /></a>)
+                  : (<a href="/" ><img className="logo" src={Logo} alt="Quizzical Logo" /></a>
                 )}
               </div>
                 <ul class="navbar-text">

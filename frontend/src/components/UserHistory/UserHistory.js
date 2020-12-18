@@ -31,7 +31,7 @@ function UserHistory() {
     })
 
     return (        
-        <div className="table-wrapper">
+        <div className="table-wrapper-uh">
 
             <table className="content-table">
                 <thead>
