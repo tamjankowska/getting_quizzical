@@ -27,7 +27,7 @@ function Question(props) {
                 Swal.fire({
                     title: 'props.index + "Correct! Total points: " + (props.points + 10)',
                     imageUrl: 'https://i.imgur.com/r3VHXOc.gif',
-                    imageWidth: 400,
+                    imageWidth: 300,
                     imageHeight: 200,
                     imageAlt: 'Mans stomach',
                     confirmButtonColor: '#C4F43C'
@@ -41,7 +41,7 @@ function Question(props) {
             Swal.fire({
                 title: `${props.index} Incorrect. The correct answer was: '${props.question.correctAnswer}'. Total points: ${props.points}`,
                 imageUrl: 'https://i.imgur.com/eJTOaZh.gif',
-                imageWidth: 400,
+                imageWidth: 300,
                 imageHeight: 200,
                 imageAlt: 'Men exercising',
                 confirmButtonColor: '#C4F43C'
