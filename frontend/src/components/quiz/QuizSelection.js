@@ -13,10 +13,6 @@ function QuizSelection(props) {
                 props.setDifficulty(event.target.options[event.target.selectedIndex].value);
               }}
             >
-              <option value="">
-                {" "}
-                -{" "}
-              </option>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
@@ -32,10 +28,6 @@ function QuizSelection(props) {
                 console.log(props.type)
               }}
             >
-              <option value="">
-                {" "}
-                -{" "}
-              </option>
               <option value="boolean">True/False</option>
               <option value="multiple">Multiple Choice</option>
             </select>
@@ -50,10 +42,6 @@ function QuizSelection(props) {
                 console.log(props.category)
               }}
             >
-              <option value="">
-                {" "}
-                -{" "}
-              </option>
               <option value="9">General Knowledge</option>
               <option value="10">Entertainment: Books</option>
               <option value="11">Entertainment: Film</option>

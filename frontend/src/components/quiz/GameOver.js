@@ -8,6 +8,7 @@ function GameOver(props) {
     let history = useHistory();
 
     const saveResults = async () => {
+        console.log(props)
         await axios.post('api/results/save', {
           userID: sessionStorage.getItem('userID'),
           username: sessionStorage.getItem('username'),
@@ -46,14 +47,8 @@ function GameOver(props) {
       props.setQuizStarted(false);
     } 
 
-    // useEffect(() => {
-    //     if (props.resultsSent === true) {
-    //         sessionStorage.removeItem('difficulty');
-    //         sessionStorage.removeItem('category');
-    //         sessionStorage.removeItem('type');
-    //         sessionStorage.removeItem('quizTakenAt');
-    //     }
-    // }) 
+    setTimeout(saveResults, 2500); 
+    
 
     return (
         <div className = "game-over-container">
